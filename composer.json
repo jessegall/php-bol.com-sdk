@@ -1,0 +1,21 @@
+{
+    "name": "jessegall/bol.com-sdk",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "JesseGall\\BolComSDK\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jesse Gall",
+            "email": "jesse-gall@hotmail.com"
+        }
+    ],
+    "require": {
+        "jessegall/resources": "^0.0.8"
+    }
+}

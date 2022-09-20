@@ -1,0 +1,27 @@
+<?php
+
+namespace JesseGall\BolComSDK\Resources;
+
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+class {{ class }} extends Resource
+{
+
+    /**
+     * The api endpoint of the resource.
+     *
+     * @var string
+     */
+    protected string $endpoint = '{{ endpoint }}';
+
+    /**
+     * The bol.com resource this class represents
+     *
+     * @var string
+     */
+    protected string $bolComResource = '{{ bolComResource }}';
+
+    {{ methods }}
+
+}
