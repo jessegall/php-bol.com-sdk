@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class Fulfilment 
-*/
+ * Class Fulfilment
+ */
 class Fulfilment extends Resource
 {
 
@@ -25,13 +22,13 @@ class Fulfilment extends Resource
      */
     protected string $bolComResource = 'Fulfilment';
 
-    
+
     /**
-    * The fulfilment method. Fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB). 
-*
-    * @return string|null
-    */
-    public function getMethod(): ?string 
+     * The fulfilment method. Fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB).
+     *
+     * @return string|null
+     */
+    public function getMethod(): ?string
     {
         return $this->get('method');
     }
@@ -40,17 +37,17 @@ class Fulfilment extends Resource
      * @param string|null $method
      * @return $this
      */
-    public function setMethod(string $method = null): static 
+    public function setMethod(string $method = null): static
     {
         return $this->set('method', $method);
     }
 
     /**
-    * The delivery promise that applies to this offer. This value will only be used in combination with fulfilmentMethod 'FBR'. 
-*
-    * @return string|null
-    */
-    public function getDeliveryCode(): ?string 
+     * The delivery promise that applies to this offer. This value will only be used in combination with fulfilmentMethod 'FBR'.
+     *
+     * @return string|null
+     */
+    public function getDeliveryCode(): ?string
     {
         return $this->get('deliveryCode');
     }
@@ -59,7 +56,7 @@ class Fulfilment extends Resource
      * @param string|null $deliveryCode
      * @return $this
      */
-    public function setDeliveryCode(string $deliveryCode = null): static 
+    public function setDeliveryCode(string $deliveryCode = null): static
     {
         return $this->set('deliveryCode', $deliveryCode);
     }

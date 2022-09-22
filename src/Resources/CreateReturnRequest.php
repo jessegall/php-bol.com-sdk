@@ -2,13 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Request;
 
 /**
-* Class CreateReturnRequest 
-*/
+ * Class CreateReturnRequest
+ */
 class CreateReturnRequest extends Resource implements Request
 {
     /**
@@ -32,13 +30,13 @@ class CreateReturnRequest extends Resource implements Request
      */
     protected string $bolComResource = 'CreateReturnRequest';
 
-    
+
     /**
-    * The id for the order item. One order can have multiple order items, but the list can only take one item. 
-*
-    * @return string|null
-    */
-    public function getOrderItemId(): ?string 
+     * The id for the order item. One order can have multiple order items, but the list can only take one item.
+     *
+     * @return string|null
+     */
+    public function getOrderItemId(): ?string
     {
         return $this->get('orderItemId');
     }
@@ -47,17 +45,17 @@ class CreateReturnRequest extends Resource implements Request
      * @param string|null $orderItemId
      * @return $this
      */
-    public function setOrderItemId(string $orderItemId = null): static 
+    public function setOrderItemId(string $orderItemId = null): static
     {
         return $this->set('orderItemId', $orderItemId);
     }
 
     /**
-    * The quantity of items returned. 
-*
-    * @return int|null
-    */
-    public function getQuantityReturned(): ?int 
+     * The quantity of items returned.
+     *
+     * @return int|null
+     */
+    public function getQuantityReturned(): ?int
     {
         return $this->get('quantityReturned');
     }
@@ -66,17 +64,17 @@ class CreateReturnRequest extends Resource implements Request
      * @param int|null $quantityReturned
      * @return $this
      */
-    public function setQuantityReturned(int $quantityReturned = null): static 
+    public function setQuantityReturned(int $quantityReturned = null): static
     {
         return $this->set('quantityReturned', $quantityReturned);
     }
 
     /**
-    * The handling result requested by the retailer. 
-*
-    * @return string|null
-    */
-    public function getHandlingResult(): ?string 
+     * The handling result requested by the retailer.
+     *
+     * @return string|null
+     */
+    public function getHandlingResult(): ?string
     {
         return $this->get('handlingResult');
     }
@@ -85,7 +83,7 @@ class CreateReturnRequest extends Resource implements Request
      * @param string|null $handlingResult
      * @return $this
      */
-    public function setHandlingResult(string $handlingResult = null): static 
+    public function setHandlingResult(string $handlingResult = null): static
     {
         return $this->set('handlingResult', $handlingResult);
     }

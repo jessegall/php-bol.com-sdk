@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class OrderItemCancellation 
-*/
+ * Class OrderItemCancellation
+ */
 class OrderItemCancellation extends Resource
 {
 
@@ -25,13 +22,13 @@ class OrderItemCancellation extends Resource
      */
     protected string $bolComResource = 'OrderItemCancellation';
 
-    
+
     /**
-    * The id for the order item. One order can have multiple order items, but the list can only take one item. 
-*
-    * @return string|null
-    */
-    public function getOrderItemId(): ?string 
+     * The id for the order item. One order can have multiple order items, but the list can only take one item.
+     *
+     * @return string|null
+     */
+    public function getOrderItemId(): ?string
     {
         return $this->get('orderItemId');
     }
@@ -40,17 +37,17 @@ class OrderItemCancellation extends Resource
      * @param string|null $orderItemId
      * @return $this
      */
-    public function setOrderItemId(string $orderItemId = null): static 
+    public function setOrderItemId(string $orderItemId = null): static
     {
         return $this->set('orderItemId', $orderItemId);
     }
 
     /**
-    * The code representing the reason for cancellation of this item. 
-*
-    * @return string|null
-    */
-    public function getReasonCode(): ?string 
+     * The code representing the reason for cancellation of this item.
+     *
+     * @return string|null
+     */
+    public function getReasonCode(): ?string
     {
         return $this->get('reasonCode');
     }
@@ -59,7 +56,7 @@ class OrderItemCancellation extends Resource
      * @param string|null $reasonCode
      * @return $this
      */
-    public function setReasonCode(string $reasonCode = null): static 
+    public function setReasonCode(string $reasonCode = null): static
     {
         return $this->set('reasonCode', $reasonCode);
     }

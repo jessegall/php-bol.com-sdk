@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class CreateReplenishmentLine 
-*/
+ * Class CreateReplenishmentLine
+ */
 class CreateReplenishmentLine extends Resource
 {
 
@@ -25,13 +22,13 @@ class CreateReplenishmentLine extends Resource
      */
     protected string $bolComResource = 'CreateReplenishmentLine';
 
-    
+
     /**
-    * The EAN number associated with this product. 
-*
-    * @return string|null
-    */
-    public function getEan(): ?string 
+     * The EAN number associated with this product.
+     *
+     * @return string|null
+     */
+    public function getEan(): ?string
     {
         return $this->get('ean');
     }
@@ -40,17 +37,17 @@ class CreateReplenishmentLine extends Resource
      * @param string|null $ean
      * @return $this
      */
-    public function setEan(string $ean = null): static 
+    public function setEan(string $ean = null): static
     {
         return $this->set('ean', $ean);
     }
 
     /**
-    * The number of announced items. 
-*
-    * @return int|null
-    */
-    public function getQuantity(): ?int 
+     * The number of announced items.
+     *
+     * @return int|null
+     */
+    public function getQuantity(): ?int
     {
         return $this->get('quantity');
     }
@@ -59,7 +56,7 @@ class CreateReplenishmentLine extends Resource
      * @param int|null $quantity
      * @return $this
      */
-    public function setQuantity(int $quantity = null): static 
+    public function setQuantity(int $quantity = null): static
     {
         return $this->set('quantity', $quantity);
     }

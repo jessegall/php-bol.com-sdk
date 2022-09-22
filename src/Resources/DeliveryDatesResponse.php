@@ -2,13 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Response;
 
 /**
-* Class DeliveryDatesResponse 
-*/
+ * Class DeliveryDatesResponse
+ */
 class DeliveryDatesResponse extends Resource implements Response
 {
 
@@ -19,13 +17,13 @@ class DeliveryDatesResponse extends Resource implements Response
      */
     protected string $bolComResource = 'DeliveryDatesResponse';
 
-    
+
     /**
-    * Allowed delivery dates for shipments to the bol.com warehouse in ISO 8601 format. 
-*
-    * @return array|null
-    */
-    public function getDeliveryDates(): ?array 
+     * Allowed delivery dates for shipments to the bol.com warehouse in ISO 8601 format.
+     *
+     * @return array|null
+     */
+    public function getDeliveryDates(): ?array
     {
         return $this->get('deliveryDates');
     }
@@ -34,7 +32,7 @@ class DeliveryDatesResponse extends Resource implements Response
      * @param array|null $deliveryDates
      * @return $this
      */
-    public function setDeliveryDates(array $deliveryDates = null): static 
+    public function setDeliveryDates(array $deliveryDates = null): static
     {
         return $this->set('deliveryDates', $deliveryDates);
     }

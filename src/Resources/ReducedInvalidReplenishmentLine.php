@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class ReducedInvalidReplenishmentLine 
-*/
+ * Class ReducedInvalidReplenishmentLine
+ */
 class ReducedInvalidReplenishmentLine extends Resource
 {
 
@@ -25,13 +22,13 @@ class ReducedInvalidReplenishmentLine extends Resource
      */
     protected string $bolComResource = 'ReducedInvalidReplenishmentLine';
 
-    
+
     /**
-    * Type of invalid replenishment line, in case the BSKU and/or EAN cannot be determined for this replenishment line. 
-*
-    * @return string|null
-    */
-    public function getType(): ?string 
+     * Type of invalid replenishment line, in case the BSKU and/or EAN cannot be determined for this replenishment line.
+     *
+     * @return string|null
+     */
+    public function getType(): ?string
     {
         return $this->get('type');
     }
@@ -40,7 +37,7 @@ class ReducedInvalidReplenishmentLine extends Resource
      * @param string|null $type
      * @return $this
      */
-    public function setType(string $type = null): static 
+    public function setType(string $type = null): static
     {
         return $this->set('type', $type);
     }

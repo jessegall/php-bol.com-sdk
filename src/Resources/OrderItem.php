@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class OrderItem 
-*/
+ * Class OrderItem
+ */
 class OrderItem extends Resource
 {
 
@@ -25,13 +22,13 @@ class OrderItem extends Resource
      */
     protected string $bolComResource = 'OrderItem';
 
-    
+
     /**
-    * The id for the order item (1 order can have multiple order items). 
-*
-    * @return string|null
-    */
-    public function getOrderItemId(): ?string 
+     * The id for the order item (1 order can have multiple order items).
+     *
+     * @return string|null
+     */
+    public function getOrderItemId(): ?string
     {
         return $this->get('orderItemId');
     }
@@ -40,7 +37,7 @@ class OrderItem extends Resource
      * @param string|null $orderItemId
      * @return $this
      */
-    public function setOrderItemId(string $orderItemId = null): static 
+    public function setOrderItemId(string $orderItemId = null): static
     {
         return $this->set('orderItemId', $orderItemId);
     }

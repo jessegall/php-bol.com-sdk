@@ -2,13 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Request;
 
 /**
-* Class UpdateSubscriptionRequest 
-*/
+ * Class UpdateSubscriptionRequest
+ */
 class UpdateSubscriptionRequest extends Resource implements Request
 {
     /**
@@ -32,13 +30,13 @@ class UpdateSubscriptionRequest extends Resource implements Request
      */
     protected string $bolComResource = 'UpdateSubscriptionRequest';
 
-    
+
     /**
-    * Type of event. 
-*
-    * @return array|null
-    */
-    public function getResources(): ?array 
+     * Type of event.
+     *
+     * @return array|null
+     */
+    public function getResources(): ?array
     {
         return $this->get('resources');
     }
@@ -47,17 +45,17 @@ class UpdateSubscriptionRequest extends Resource implements Request
      * @param array|null $resources
      * @return $this
      */
-    public function setResources(array $resources = null): static 
+    public function setResources(array $resources = null): static
     {
         return $this->set('resources', $resources);
     }
 
     /**
-    * URL to receive this WebHook notification. 
-*
-    * @return string|null
-    */
-    public function getUrl(): ?string 
+     * URL to receive this WebHook notification.
+     *
+     * @return string|null
+     */
+    public function getUrl(): ?string
     {
         return $this->get('url');
     }
@@ -66,7 +64,7 @@ class UpdateSubscriptionRequest extends Resource implements Request
      * @param string|null $url
      * @return $this
      */
-    public function setUrl(string $url = null): static 
+    public function setUrl(string $url = null): static
     {
         return $this->set('url', $url);
     }

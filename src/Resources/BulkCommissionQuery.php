@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class BulkCommissionQuery 
-*/
+ * Class BulkCommissionQuery
+ */
 class BulkCommissionQuery extends Resource
 {
 
@@ -25,13 +22,13 @@ class BulkCommissionQuery extends Resource
      */
     protected string $bolComResource = 'BulkCommissionQuery';
 
-    
+
     /**
-    * The EAN number associated with this product. 
-*
-    * @return string|null
-    */
-    public function getEan(): ?string 
+     * The EAN number associated with this product.
+     *
+     * @return string|null
+     */
+    public function getEan(): ?string
     {
         return $this->get('ean');
     }
@@ -40,17 +37,17 @@ class BulkCommissionQuery extends Resource
      * @param string|null $ean
      * @return $this
      */
-    public function setEan(string $ean = null): static 
+    public function setEan(string $ean = null): static
     {
         return $this->set('ean', $ean);
     }
 
     /**
-    * The condition of the offer. 
-*
-    * @return string|null
-    */
-    public function getCondition(): ?string 
+     * The condition of the offer.
+     *
+     * @return string|null
+     */
+    public function getCondition(): ?string
     {
         return $this->get('condition');
     }
@@ -59,17 +56,17 @@ class BulkCommissionQuery extends Resource
      * @param string|null $condition
      * @return $this
      */
-    public function setCondition(string $condition = null): static 
+    public function setCondition(string $condition = null): static
     {
         return $this->set('condition', $condition);
     }
 
     /**
-    * The price of the product with a period as a decimal separator. The price should always have two decimals precision. 
-*
-    * @return int|null
-    */
-    public function getUnitPrice(): ?int 
+     * The price of the product with a period as a decimal separator. The price should always have two decimals precision.
+     *
+     * @return int|null
+     */
+    public function getUnitPrice(): ?int
     {
         return $this->get('unitPrice');
     }
@@ -78,7 +75,7 @@ class BulkCommissionQuery extends Resource
      * @param int|null $unitPrice
      * @return $this
      */
-    public function setUnitPrice(int $unitPrice = null): static 
+    public function setUnitPrice(int $unitPrice = null): static
     {
         return $this->set('unitPrice', $unitPrice);
     }

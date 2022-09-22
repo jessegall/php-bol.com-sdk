@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class KeySet 
-*/
+ * Class KeySet
+ */
 class KeySet extends Resource
 {
 
@@ -25,13 +22,13 @@ class KeySet extends Resource
      */
     protected string $bolComResource = 'KeySet';
 
-    
+
     /**
-    * Key identifier. Maps to the keyId value in the signature header of the push request. 
-*
-    * @return string|null
-    */
-    public function getId(): ?string 
+     * Key identifier. Maps to the keyId value in the signature header of the push request.
+     *
+     * @return string|null
+     */
+    public function getId(): ?string
     {
         return $this->get('id');
     }
@@ -40,17 +37,17 @@ class KeySet extends Resource
      * @param string|null $id
      * @return $this
      */
-    public function setId(string $id = null): static 
+    public function setId(string $id = null): static
     {
         return $this->set('id', $id);
     }
 
     /**
-    * Key encryption type. 
-*
-    * @return string|null
-    */
-    public function getType(): ?string 
+     * Key encryption type.
+     *
+     * @return string|null
+     */
+    public function getType(): ?string
     {
         return $this->get('type');
     }
@@ -59,17 +56,17 @@ class KeySet extends Resource
      * @param string|null $type
      * @return $this
      */
-    public function setType(string $type = null): static 
+    public function setType(string $type = null): static
     {
         return $this->set('type', $type);
     }
 
     /**
-    * The Base64 encoded public key to use when verifying the signature. 
-*
-    * @return string|null
-    */
-    public function getPublicKey(): ?string 
+     * The Base64 encoded public key to use when verifying the signature.
+     *
+     * @return string|null
+     */
+    public function getPublicKey(): ?string
     {
         return $this->get('publicKey');
     }
@@ -78,7 +75,7 @@ class KeySet extends Resource
      * @param string|null $publicKey
      * @return $this
      */
-    public function setPublicKey(string $publicKey = null): static 
+    public function setPublicKey(string $publicKey = null): static
     {
         return $this->set('publicKey', $publicKey);
     }

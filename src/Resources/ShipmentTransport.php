@@ -2,12 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class ShipmentTransport 
-*/
+ * Class ShipmentTransport
+ */
 class ShipmentTransport extends Resource
 {
 
@@ -25,13 +24,13 @@ class ShipmentTransport extends Resource
      */
     protected string $bolComResource = 'ShipmentTransport';
 
-    
+
     /**
-    * The transport id. 
-*
-    * @return string|null
-    */
-    public function getTransportId(): ?string 
+     * The transport id.
+     *
+     * @return string|null
+     */
+    public function getTransportId(): ?string
     {
         return $this->get('transportId');
     }
@@ -40,17 +39,17 @@ class ShipmentTransport extends Resource
      * @param string|null $transportId
      * @return $this
      */
-    public function setTransportId(string $transportId = null): static 
+    public function setTransportId(string $transportId = null): static
     {
         return $this->set('transportId', $transportId);
     }
 
     /**
-    * Specify the transporter that will carry out the shipment. 
-*
-    * @return string|null
-    */
-    public function getTransporterCode(): ?string 
+     * Specify the transporter that will carry out the shipment.
+     *
+     * @return string|null
+     */
+    public function getTransporterCode(): ?string
     {
         return $this->get('transporterCode');
     }
@@ -59,17 +58,17 @@ class ShipmentTransport extends Resource
      * @param string|null $transporterCode
      * @return $this
      */
-    public function setTransporterCode(string $transporterCode = null): static 
+    public function setTransporterCode(string $transporterCode = null): static
     {
         return $this->set('transporterCode', $transporterCode);
     }
 
     /**
-    * The track and trace code that is associated with this transport. 
-*
-    * @return string|null
-    */
-    public function getTrackAndTrace(): ?string 
+     * The track and trace code that is associated with this transport.
+     *
+     * @return string|null
+     */
+    public function getTrackAndTrace(): ?string
     {
         return $this->get('trackAndTrace');
     }
@@ -78,17 +77,17 @@ class ShipmentTransport extends Resource
      * @param string|null $trackAndTrace
      * @return $this
      */
-    public function setTrackAndTrace(string $trackAndTrace = null): static 
+    public function setTrackAndTrace(string $trackAndTrace = null): static
     {
         return $this->set('trackAndTrace', $trackAndTrace);
     }
 
     /**
-    * The shipping label id. 
-*
-    * @return string|null
-    */
-    public function getShippingLabelId(): ?string 
+     * The shipping label id.
+     *
+     * @return string|null
+     */
+    public function getShippingLabelId(): ?string
     {
         return $this->get('shippingLabelId');
     }
@@ -97,25 +96,24 @@ class ShipmentTransport extends Resource
      * @param string|null $shippingLabelId
      * @return $this
      */
-    public function setShippingLabelId(string $shippingLabelId = null): static 
+    public function setShippingLabelId(string $shippingLabelId = null): static
     {
         return $this->set('shippingLabelId', $shippingLabelId);
     }
 
     /**
-    
-    * @return ResourceCollection<TransportEvent>|null
-    */
-    public function getTransportEvents(): ?ResourceCollection 
+     * @return ResourceCollection<TransportEvent>|null
+     */
+    public function getTransportEvents(): ?ResourceCollection
     {
-        return $this->relation('transportEvents', ResourceCollection::class,true);
+        return $this->relation('transportEvents', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<TransportEvent>|null $transportEvents
      * @return $this
      */
-    public function setTransportEvents(ResourceCollection $transportEvents = null): static 
+    public function setTransportEvents(ResourceCollection $transportEvents = null): static
     {
         return $this->set('transportEvents', $transportEvents);
     }

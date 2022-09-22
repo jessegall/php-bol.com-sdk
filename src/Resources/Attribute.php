@@ -2,12 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class Attribute 
-*/
+ * Class Attribute
+ */
 class Attribute extends Resource
 {
 
@@ -25,13 +24,13 @@ class Attribute extends Resource
      */
     protected string $bolComResource = 'Attribute';
 
-    
+
     /**
-    * The identifier of the attribute for which the value has changed. 
-*
-    * @return string|null
-    */
-    public function getId(): ?string 
+     * The identifier of the attribute for which the value has changed.
+     *
+     * @return string|null
+     */
+    public function getId(): ?string
     {
         return $this->get('id');
     }
@@ -40,25 +39,24 @@ class Attribute extends Resource
      * @param string|null $id
      * @return $this
      */
-    public function setId(string $id = null): static 
+    public function setId(string $id = null): static
     {
         return $this->set('id', $id);
     }
 
     /**
-    
-    * @return ResourceCollection<AttributeValue>|null
-    */
-    public function getValues(): ?ResourceCollection 
+     * @return ResourceCollection<AttributeValue>|null
+     */
+    public function getValues(): ?ResourceCollection
     {
-        return $this->relation('values', ResourceCollection::class,true);
+        return $this->relation('values', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<AttributeValue>|null $values
      * @return $this
      */
-    public function setValues(ResourceCollection $values = null): static 
+    public function setValues(ResourceCollection $values = null): static
     {
         return $this->set('values', $values);
     }

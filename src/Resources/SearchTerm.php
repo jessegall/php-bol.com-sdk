@@ -2,12 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class SearchTerm 
-*/
+ * Class SearchTerm
+ */
 class SearchTerm extends Resource
 {
 
@@ -25,13 +24,13 @@ class SearchTerm extends Resource
      */
     protected string $bolComResource = 'SearchTerm';
 
-    
+
     /**
-    * The search term for which you requested the search volume. 
-*
-    * @return string|null
-    */
-    public function getSearchTerm(): ?string 
+     * The search term for which you requested the search volume.
+     *
+     * @return string|null
+     */
+    public function getSearchTerm(): ?string
     {
         return $this->get('searchTerm');
     }
@@ -40,17 +39,17 @@ class SearchTerm extends Resource
      * @param string|null $searchTerm
      * @return $this
      */
-    public function setSearchTerm(string $searchTerm = null): static 
+    public function setSearchTerm(string $searchTerm = null): static
     {
         return $this->set('searchTerm', $searchTerm);
     }
 
     /**
-    * Interpretation of the data that applies to this measurement. 
-*
-    * @return string|null
-    */
-    public function getType(): ?string 
+     * Interpretation of the data that applies to this measurement.
+     *
+     * @return string|null
+     */
+    public function getType(): ?string
     {
         return $this->get('type');
     }
@@ -59,17 +58,17 @@ class SearchTerm extends Resource
      * @param string|null $type
      * @return $this
      */
-    public function setType(string $type = null): static 
+    public function setType(string $type = null): static
     {
         return $this->set('type', $type);
     }
 
     /**
-    * The number of customer visits on the search page. 
-*
-    * @return int|null
-    */
-    public function getTotal(): ?int 
+     * The number of customer visits on the search page.
+     *
+     * @return int|null
+     */
+    public function getTotal(): ?int
     {
         return $this->get('total');
     }
@@ -78,61 +77,58 @@ class SearchTerm extends Resource
      * @param int|null $total
      * @return $this
      */
-    public function setTotal(int $total = null): static 
+    public function setTotal(int $total = null): static
     {
         return $this->set('total', $total);
     }
 
     /**
-    
-    * @return ResourceCollection<SearchTermsCountry>|null
-    */
-    public function getCountries(): ?ResourceCollection 
+     * @return ResourceCollection<SearchTermsCountry>|null
+     */
+    public function getCountries(): ?ResourceCollection
     {
-        return $this->relation('countries', ResourceCollection::class,true);
+        return $this->relation('countries', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<SearchTermsCountry>|null $countries
      * @return $this
      */
-    public function setCountries(ResourceCollection $countries = null): static 
+    public function setCountries(ResourceCollection $countries = null): static
     {
         return $this->set('countries', $countries);
     }
 
     /**
-    
-    * @return ResourceCollection<TotalPeriod>|null
-    */
-    public function getPeriods(): ?ResourceCollection 
+     * @return ResourceCollection<TotalPeriod>|null
+     */
+    public function getPeriods(): ?ResourceCollection
     {
-        return $this->relation('periods', ResourceCollection::class,true);
+        return $this->relation('periods', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<TotalPeriod>|null $periods
      * @return $this
      */
-    public function setPeriods(ResourceCollection $periods = null): static 
+    public function setPeriods(ResourceCollection $periods = null): static
     {
         return $this->set('periods', $periods);
     }
 
     /**
-    
-    * @return ResourceCollection<RelatedSearchTerm>|null
-    */
-    public function getRelatedSearchTerms(): ?ResourceCollection 
+     * @return ResourceCollection<RelatedSearchTerm>|null
+     */
+    public function getRelatedSearchTerms(): ?ResourceCollection
     {
-        return $this->relation('relatedSearchTerms', ResourceCollection::class,true);
+        return $this->relation('relatedSearchTerms', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<RelatedSearchTerm>|null $relatedSearchTerms
      * @return $this
      */
-    public function setRelatedSearchTerms(ResourceCollection $relatedSearchTerms = null): static 
+    public function setRelatedSearchTerms(ResourceCollection $relatedSearchTerms = null): static
     {
         return $this->set('relatedSearchTerms', $relatedSearchTerms);
     }

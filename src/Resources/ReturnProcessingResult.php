@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class ReturnProcessingResult 
-*/
+ * Class ReturnProcessingResult
+ */
 class ReturnProcessingResult extends Resource
 {
 
@@ -25,13 +22,13 @@ class ReturnProcessingResult extends Resource
      */
     protected string $bolComResource = 'ReturnProcessingResult';
 
-    
+
     /**
-    * The processed quantity. 
-*
-    * @return int|null
-    */
-    public function getQuantity(): ?int 
+     * The processed quantity.
+     *
+     * @return int|null
+     */
+    public function getQuantity(): ?int
     {
         return $this->get('quantity');
     }
@@ -40,17 +37,17 @@ class ReturnProcessingResult extends Resource
      * @param int|null $quantity
      * @return $this
      */
-    public function setQuantity(int $quantity = null): static 
+    public function setQuantity(int $quantity = null): static
     {
         return $this->set('quantity', $quantity);
     }
 
     /**
-    * The processing result of the return. 
-*
-    * @return string|null
-    */
-    public function getProcessingResult(): ?string 
+     * The processing result of the return.
+     *
+     * @return string|null
+     */
+    public function getProcessingResult(): ?string
     {
         return $this->get('processingResult');
     }
@@ -59,17 +56,17 @@ class ReturnProcessingResult extends Resource
      * @param string|null $processingResult
      * @return $this
      */
-    public function setProcessingResult(string $processingResult = null): static 
+    public function setProcessingResult(string $processingResult = null): static
     {
         return $this->set('processingResult', $processingResult);
     }
 
     /**
-    * The handling result requested by the retailer. 
-*
-    * @return string|null
-    */
-    public function getHandlingResult(): ?string 
+     * The handling result requested by the retailer.
+     *
+     * @return string|null
+     */
+    public function getHandlingResult(): ?string
     {
         return $this->get('handlingResult');
     }
@@ -78,17 +75,17 @@ class ReturnProcessingResult extends Resource
      * @param string|null $handlingResult
      * @return $this
      */
-    public function setHandlingResult(string $handlingResult = null): static 
+    public function setHandlingResult(string $handlingResult = null): static
     {
         return $this->set('handlingResult', $handlingResult);
     }
 
     /**
-    * The date and time in ISO 8601 format when the return was processed. 
-*
-    * @return string|null
-    */
-    public function getProcessingDateTime(): ?string 
+     * The date and time in ISO 8601 format when the return was processed.
+     *
+     * @return string|null
+     */
+    public function getProcessingDateTime(): ?string
     {
         return $this->get('processingDateTime');
     }
@@ -97,7 +94,7 @@ class ReturnProcessingResult extends Resource
      * @param string|null $processingDateTime
      * @return $this
      */
-    public function setProcessingDateTime(string $processingDateTime = null): static 
+    public function setProcessingDateTime(string $processingDateTime = null): static
     {
         return $this->set('processingDateTime', $processingDateTime);
     }

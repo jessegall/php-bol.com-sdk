@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class ReplenishmentLine 
-*/
+ * Class ReplenishmentLine
+ */
 class ReplenishmentLine extends Resource
 {
 
@@ -25,13 +22,13 @@ class ReplenishmentLine extends Resource
      */
     protected string $bolComResource = 'ReplenishmentLine';
 
-    
+
     /**
-    * The EAN number associated with this product. 
-*
-    * @return string|null
-    */
-    public function getEan(): ?string 
+     * The EAN number associated with this product.
+     *
+     * @return string|null
+     */
+    public function getEan(): ?string
     {
         return $this->get('ean');
     }
@@ -40,17 +37,17 @@ class ReplenishmentLine extends Resource
      * @param string|null $ean
      * @return $this
      */
-    public function setEan(string $ean = null): static 
+    public function setEan(string $ean = null): static
     {
         return $this->set('ean', $ean);
     }
 
     /**
-    * The state of the line indicating whether this line was announced within this replenishment. 
-*
-    * @return string|null
-    */
-    public function getLineState(): ?string 
+     * The state of the line indicating whether this line was announced within this replenishment.
+     *
+     * @return string|null
+     */
+    public function getLineState(): ?string
     {
         return $this->get('lineState');
     }
@@ -59,17 +56,17 @@ class ReplenishmentLine extends Resource
      * @param string|null $lineState
      * @return $this
      */
-    public function setLineState(string $lineState = null): static 
+    public function setLineState(string $lineState = null): static
     {
         return $this->set('lineState', $lineState);
     }
 
     /**
-    * The amount of announced quantity for this replenishment line. 
-*
-    * @return int|null
-    */
-    public function getQuantityAnnounced(): ?int 
+     * The amount of announced quantity for this replenishment line.
+     *
+     * @return int|null
+     */
+    public function getQuantityAnnounced(): ?int
     {
         return $this->get('quantityAnnounced');
     }
@@ -78,17 +75,17 @@ class ReplenishmentLine extends Resource
      * @param int|null $quantityAnnounced
      * @return $this
      */
-    public function setQuantityAnnounced(int $quantityAnnounced = null): static 
+    public function setQuantityAnnounced(int $quantityAnnounced = null): static
     {
         return $this->set('quantityAnnounced', $quantityAnnounced);
     }
 
     /**
-    * The amount of received quantity for this replenishment line. 
-*
-    * @return int|null
-    */
-    public function getQuantityReceived(): ?int 
+     * The amount of received quantity for this replenishment line.
+     *
+     * @return int|null
+     */
+    public function getQuantityReceived(): ?int
     {
         return $this->get('quantityReceived');
     }
@@ -97,17 +94,17 @@ class ReplenishmentLine extends Resource
      * @param int|null $quantityReceived
      * @return $this
      */
-    public function setQuantityReceived(int $quantityReceived = null): static 
+    public function setQuantityReceived(int $quantityReceived = null): static
     {
         return $this->set('quantityReceived', $quantityReceived);
     }
 
     /**
-    * The amount of quantity that is still in progress at the warehouse for this replenishment line. 
-*
-    * @return int|null
-    */
-    public function getQuantityInProgress(): ?int 
+     * The amount of quantity that is still in progress at the warehouse for this replenishment line.
+     *
+     * @return int|null
+     */
+    public function getQuantityInProgress(): ?int
     {
         return $this->get('quantityInProgress');
     }
@@ -116,17 +113,17 @@ class ReplenishmentLine extends Resource
      * @param int|null $quantityInProgress
      * @return $this
      */
-    public function setQuantityInProgress(int $quantityInProgress = null): static 
+    public function setQuantityInProgress(int $quantityInProgress = null): static
     {
         return $this->set('quantityInProgress', $quantityInProgress);
     }
 
     /**
-    * The quantity within this shipment line that has a graded (unsalable) state. 
-*
-    * @return int|null
-    */
-    public function getQuantityWithGradedState(): ?int 
+     * The quantity within this shipment line that has a graded (unsalable) state.
+     *
+     * @return int|null
+     */
+    public function getQuantityWithGradedState(): ?int
     {
         return $this->get('quantityWithGradedState');
     }
@@ -135,17 +132,17 @@ class ReplenishmentLine extends Resource
      * @param int|null $quantityWithGradedState
      * @return $this
      */
-    public function setQuantityWithGradedState(int $quantityWithGradedState = null): static 
+    public function setQuantityWithGradedState(int $quantityWithGradedState = null): static
     {
         return $this->set('quantityWithGradedState', $quantityWithGradedState);
     }
 
     /**
-    * The quantity within this shipment line that has a regular (salable) state. 
-*
-    * @return int|null
-    */
-    public function getQuantityWithRegularState(): ?int 
+     * The quantity within this shipment line that has a regular (salable) state.
+     *
+     * @return int|null
+     */
+    public function getQuantityWithRegularState(): ?int
     {
         return $this->get('quantityWithRegularState');
     }
@@ -154,7 +151,7 @@ class ReplenishmentLine extends Resource
      * @param int|null $quantityWithRegularState
      * @return $this
      */
-    public function setQuantityWithRegularState(int $quantityWithRegularState = null): static 
+    public function setQuantityWithRegularState(int $quantityWithRegularState = null): static
     {
         return $this->set('quantityWithRegularState', $quantityWithRegularState);
     }

@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class UpdateLoadCarrier 
-*/
+ * Class UpdateLoadCarrier
+ */
 class UpdateLoadCarrier extends Resource
 {
 
@@ -25,13 +22,13 @@ class UpdateLoadCarrier extends Resource
      */
     protected string $bolComResource = 'UpdateLoadCarrier';
 
-    
+
     /**
-    * The Serial Shipping Container Code (SSCC) for this load carrier. 
-*
-    * @return string|null
-    */
-    public function getSscc(): ?string 
+     * The Serial Shipping Container Code (SSCC) for this load carrier.
+     *
+     * @return string|null
+     */
+    public function getSscc(): ?string
     {
         return $this->get('sscc');
     }
@@ -40,7 +37,7 @@ class UpdateLoadCarrier extends Resource
      * @param string|null $sscc
      * @return $this
      */
-    public function setSscc(string $sscc = null): static 
+    public function setSscc(string $sscc = null): static
     {
         return $this->set('sscc', $sscc);
     }

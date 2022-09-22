@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class CreatePickupTimeSlot 
-*/
+ * Class CreatePickupTimeSlot
+ */
 class CreatePickupTimeSlot extends Resource
 {
 
@@ -25,13 +22,13 @@ class CreatePickupTimeSlot extends Resource
      */
     protected string $bolComResource = 'CreatePickupTimeSlot';
 
-    
+
     /**
-    * The selected start date and time for the replenishment pickup appointment. In ISO 8601 format. 
-*
-    * @return string|null
-    */
-    public function getFromDateTime(): ?string 
+     * The selected start date and time for the replenishment pickup appointment. In ISO 8601 format.
+     *
+     * @return string|null
+     */
+    public function getFromDateTime(): ?string
     {
         return $this->get('fromDateTime');
     }
@@ -40,17 +37,17 @@ class CreatePickupTimeSlot extends Resource
      * @param string|null $fromDateTime
      * @return $this
      */
-    public function setFromDateTime(string $fromDateTime = null): static 
+    public function setFromDateTime(string $fromDateTime = null): static
     {
         return $this->set('fromDateTime', $fromDateTime);
     }
 
     /**
-    * The selected end date and time for the replenishment pickup appointment. In ISO 8601 format. 
-*
-    * @return string|null
-    */
-    public function getUntilDateTime(): ?string 
+     * The selected end date and time for the replenishment pickup appointment. In ISO 8601 format.
+     *
+     * @return string|null
+     */
+    public function getUntilDateTime(): ?string
     {
         return $this->get('untilDateTime');
     }
@@ -59,7 +56,7 @@ class CreatePickupTimeSlot extends Resource
      * @param string|null $untilDateTime
      * @return $this
      */
-    public function setUntilDateTime(string $untilDateTime = null): static 
+    public function setUntilDateTime(string $untilDateTime = null): static
     {
         return $this->set('untilDateTime', $untilDateTime);
     }

@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class SearchTermsPeriod 
-*/
+ * Class SearchTermsPeriod
+ */
 class SearchTermsPeriod extends Resource
 {
 
@@ -25,13 +22,13 @@ class SearchTermsPeriod extends Resource
      */
     protected string $bolComResource = 'SearchTermsPeriod';
 
-    
+
     /**
-    * Day number in the ISO-8601 standard. 
-*
-    * @return string|null
-    */
-    public function getDay(): ?string 
+     * Day number in the ISO-8601 standard.
+     *
+     * @return string|null
+     */
+    public function getDay(): ?string
     {
         return $this->get('day');
     }
@@ -40,17 +37,17 @@ class SearchTermsPeriod extends Resource
      * @param string|null $day
      * @return $this
      */
-    public function setDay(string $day = null): static 
+    public function setDay(string $day = null): static
     {
         return $this->set('day', $day);
     }
 
     /**
-    * Week number in the ISO-8601 standard. 
-*
-    * @return string|null
-    */
-    public function getWeek(): ?string 
+     * Week number in the ISO-8601 standard.
+     *
+     * @return string|null
+     */
+    public function getWeek(): ?string
     {
         return $this->get('week');
     }
@@ -59,17 +56,17 @@ class SearchTermsPeriod extends Resource
      * @param string|null $week
      * @return $this
      */
-    public function setWeek(string $week = null): static 
+    public function setWeek(string $week = null): static
     {
         return $this->set('week', $week);
     }
 
     /**
-    * Month number in the ISO-8601 standard. 
-*
-    * @return string|null
-    */
-    public function getMonth(): ?string 
+     * Month number in the ISO-8601 standard.
+     *
+     * @return string|null
+     */
+    public function getMonth(): ?string
     {
         return $this->get('month');
     }
@@ -78,17 +75,17 @@ class SearchTermsPeriod extends Resource
      * @param string|null $month
      * @return $this
      */
-    public function setMonth(string $month = null): static 
+    public function setMonth(string $month = null): static
     {
         return $this->set('month', $month);
     }
 
     /**
-    * Year number in the ISO-8601 standard. 
-*
-    * @return string|null
-    */
-    public function getYear(): ?string 
+     * Year number in the ISO-8601 standard.
+     *
+     * @return string|null
+     */
+    public function getYear(): ?string
     {
         return $this->get('year');
     }
@@ -97,7 +94,7 @@ class SearchTermsPeriod extends Resource
      * @param string|null $year
      * @return $this
      */
-    public function setYear(string $year = null): static 
+    public function setYear(string $year = null): static
     {
         return $this->set('year', $year);
     }

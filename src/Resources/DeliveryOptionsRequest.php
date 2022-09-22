@@ -2,14 +2,13 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Request;
+use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class DeliveryOptionsRequest 
-* The configuration of order items to get delivery options for.
-*/
+ * Class DeliveryOptionsRequest
+ * The configuration of order items to get delivery options for.
+ */
 class DeliveryOptionsRequest extends Resource implements Request
 {
     /**
@@ -33,22 +32,22 @@ class DeliveryOptionsRequest extends Resource implements Request
      */
     protected string $bolComResource = 'DeliveryOptionsRequest';
 
-    
+
     /**
-    * Order items for which the delivery options are requested. 
-*
-    * @return ResourceCollection<OrderItem>|null
-    */
-    public function getOrderItems(): ?ResourceCollection 
+     * Order items for which the delivery options are requested.
+     *
+     * @return ResourceCollection<OrderItem>|null
+     */
+    public function getOrderItems(): ?ResourceCollection
     {
-        return $this->relation('orderItems', ResourceCollection::class,true);
+        return $this->relation('orderItems', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<OrderItem>|null $orderItems
      * @return $this
      */
-    public function setOrderItems(ResourceCollection $orderItems = null): static 
+    public function setOrderItems(ResourceCollection $orderItems = null): static
     {
         return $this->set('orderItems', $orderItems);
     }

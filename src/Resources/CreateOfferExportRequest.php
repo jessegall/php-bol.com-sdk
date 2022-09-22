@@ -2,13 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Request;
 
 /**
-* Class CreateOfferExportRequest 
-*/
+ * Class CreateOfferExportRequest
+ */
 class CreateOfferExportRequest extends Resource implements Request
 {
     /**
@@ -32,13 +30,13 @@ class CreateOfferExportRequest extends Resource implements Request
      */
     protected string $bolComResource = 'CreateOfferExportRequest';
 
-    
+
     /**
-    * The file format in which to return the export. 
-*
-    * @return string|null
-    */
-    public function getFormat(): ?string 
+     * The file format in which to return the export.
+     *
+     * @return string|null
+     */
+    public function getFormat(): ?string
     {
         return $this->get('format');
     }
@@ -47,7 +45,7 @@ class CreateOfferExportRequest extends Resource implements Request
      * @param string|null $format
      * @return $this
      */
-    public function setFormat(string $format = null): static 
+    public function setFormat(string $format = null): static
     {
         return $this->set('format', $format);
     }

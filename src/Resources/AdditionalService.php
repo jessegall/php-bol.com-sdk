@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class AdditionalService 
-*/
+ * Class AdditionalService
+ */
 class AdditionalService extends Resource
 {
 
@@ -25,13 +22,13 @@ class AdditionalService extends Resource
      */
     protected string $bolComResource = 'AdditionalService';
 
-    
+
     /**
-    * An additional service type that the customer selected when purchasing this order item. 
-*
-    * @return string|null
-    */
-    public function getServiceType(): ?string 
+     * An additional service type that the customer selected when purchasing this order item.
+     *
+     * @return string|null
+     */
+    public function getServiceType(): ?string
     {
         return $this->get('serviceType');
     }
@@ -40,7 +37,7 @@ class AdditionalService extends Resource
      * @param string|null $serviceType
      * @return $this
      */
-    public function setServiceType(string $serviceType = null): static 
+    public function setServiceType(string $serviceType = null): static
     {
         return $this->set('serviceType', $serviceType);
     }

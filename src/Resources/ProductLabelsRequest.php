@@ -2,13 +2,12 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Request;
+use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class ProductLabelsRequest 
-*/
+ * Class ProductLabelsRequest
+ */
 class ProductLabelsRequest extends Resource implements Request
 {
     /**
@@ -32,13 +31,13 @@ class ProductLabelsRequest extends Resource implements Request
      */
     protected string $bolComResource = 'ProductLabelsRequest';
 
-    
+
     /**
-    * The printer format to create labels for. 
-*
-    * @return string|null
-    */
-    public function getLabelFormat(): ?string 
+     * The printer format to create labels for.
+     *
+     * @return string|null
+     */
+    public function getLabelFormat(): ?string
     {
         return $this->get('labelFormat');
     }
@@ -47,25 +46,24 @@ class ProductLabelsRequest extends Resource implements Request
      * @param string|null $labelFormat
      * @return $this
      */
-    public function setLabelFormat(string $labelFormat = null): static 
+    public function setLabelFormat(string $labelFormat = null): static
     {
         return $this->set('labelFormat', $labelFormat);
     }
 
     /**
-    
-    * @return ResourceCollection<ProductLabelsProduct>|null
-    */
-    public function getProducts(): ?ResourceCollection 
+     * @return ResourceCollection<ProductLabelsProduct>|null
+     */
+    public function getProducts(): ?ResourceCollection
     {
-        return $this->relation('products', ResourceCollection::class,true);
+        return $this->relation('products', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<ProductLabelsProduct>|null $products
      * @return $this
      */
-    public function setProducts(ResourceCollection $products = null): static 
+    public function setProducts(ResourceCollection $products = null): static
     {
         return $this->set('products', $products);
     }

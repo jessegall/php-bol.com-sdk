@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class PickupTimeSlot 
-*/
+ * Class PickupTimeSlot
+ */
 class PickupTimeSlot extends Resource
 {
 
@@ -25,13 +22,13 @@ class PickupTimeSlot extends Resource
      */
     protected string $bolComResource = 'PickupTimeSlot';
 
-    
+
     /**
-    * The available start date and time for the pickup appointment. In ISO 8601 format. 
-*
-    * @return string|null
-    */
-    public function getFromDateTime(): ?string 
+     * The available start date and time for the pickup appointment. In ISO 8601 format.
+     *
+     * @return string|null
+     */
+    public function getFromDateTime(): ?string
     {
         return $this->get('fromDateTime');
     }
@@ -40,17 +37,17 @@ class PickupTimeSlot extends Resource
      * @param string|null $fromDateTime
      * @return $this
      */
-    public function setFromDateTime(string $fromDateTime = null): static 
+    public function setFromDateTime(string $fromDateTime = null): static
     {
         return $this->set('fromDateTime', $fromDateTime);
     }
 
     /**
-    * The available end date and time for the pickup appointment. In ISO 8601 format. 
-*
-    * @return string|null
-    */
-    public function getUntilDateTime(): ?string 
+     * The available end date and time for the pickup appointment. In ISO 8601 format.
+     *
+     * @return string|null
+     */
+    public function getUntilDateTime(): ?string
     {
         return $this->get('untilDateTime');
     }
@@ -59,7 +56,7 @@ class PickupTimeSlot extends Resource
      * @param string|null $untilDateTime
      * @return $this
      */
-    public function setUntilDateTime(string $untilDateTime = null): static 
+    public function setUntilDateTime(string $untilDateTime = null): static
     {
         return $this->set('untilDateTime', $untilDateTime);
     }

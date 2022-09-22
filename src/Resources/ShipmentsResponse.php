@@ -2,13 +2,12 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Response;
+use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class ShipmentsResponse 
-*/
+ * Class ShipmentsResponse
+ */
 class ShipmentsResponse extends Resource implements Response
 {
 
@@ -19,21 +18,20 @@ class ShipmentsResponse extends Resource implements Response
      */
     protected string $bolComResource = 'ShipmentsResponse';
 
-    
+
     /**
-    
-    * @return ResourceCollection<ReducedShipment>|null
-    */
-    public function getShipments(): ?ResourceCollection 
+     * @return ResourceCollection<ReducedShipment>|null
+     */
+    public function getShipments(): ?ResourceCollection
     {
-        return $this->relation('shipments', ResourceCollection::class,true);
+        return $this->relation('shipments', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<ReducedShipment>|null $shipments
      * @return $this
      */
-    public function setShipments(ResourceCollection $shipments = null): static 
+    public function setShipments(ResourceCollection $shipments = null): static
     {
         return $this->set('shipments', $shipments);
     }

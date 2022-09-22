@@ -2,13 +2,12 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class ReducedOrder 
-* An order.
-*/
+ * Class ReducedOrder
+ * An order.
+ */
 class ReducedOrder extends Resource
 {
 
@@ -26,13 +25,13 @@ class ReducedOrder extends Resource
      */
     protected string $bolComResource = 'ReducedOrder';
 
-    
+
     /**
-    * The identifier of the order. 
-*
-    * @return string|null
-    */
-    public function getOrderId(): ?string 
+     * The identifier of the order.
+     *
+     * @return string|null
+     */
+    public function getOrderId(): ?string
     {
         return $this->get('orderId');
     }
@@ -41,17 +40,17 @@ class ReducedOrder extends Resource
      * @param string|null $orderId
      * @return $this
      */
-    public function setOrderId(string $orderId = null): static 
+    public function setOrderId(string $orderId = null): static
     {
         return $this->set('orderId', $orderId);
     }
 
     /**
-    * The date and time in ISO 8601 format when the order was placed. 
-*
-    * @return string|null
-    */
-    public function getOrderPlacedDateTime(): ?string 
+     * The date and time in ISO 8601 format when the order was placed.
+     *
+     * @return string|null
+     */
+    public function getOrderPlacedDateTime(): ?string
     {
         return $this->get('orderPlacedDateTime');
     }
@@ -60,25 +59,24 @@ class ReducedOrder extends Resource
      * @param string|null $orderPlacedDateTime
      * @return $this
      */
-    public function setOrderPlacedDateTime(string $orderPlacedDateTime = null): static 
+    public function setOrderPlacedDateTime(string $orderPlacedDateTime = null): static
     {
         return $this->set('orderPlacedDateTime', $orderPlacedDateTime);
     }
 
     /**
-    
-    * @return ResourceCollection<ReducedOrderItem>|null
-    */
-    public function getOrderItems(): ?ResourceCollection 
+     * @return ResourceCollection<ReducedOrderItem>|null
+     */
+    public function getOrderItems(): ?ResourceCollection
     {
-        return $this->relation('orderItems', ResourceCollection::class,true);
+        return $this->relation('orderItems', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<ReducedOrderItem>|null $orderItems
      * @return $this
      */
-    public function setOrderItems(ResourceCollection $orderItems = null): static 
+    public function setOrderItems(ResourceCollection $orderItems = null): static
     {
         return $this->set('orderItems', $orderItems);
     }

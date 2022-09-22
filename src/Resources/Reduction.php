@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class Reduction 
-*/
+ * Class Reduction
+ */
 class Reduction extends Resource
 {
 
@@ -25,13 +22,13 @@ class Reduction extends Resource
      */
     protected string $bolComResource = 'Reduction';
 
-    
+
     /**
-    * Maximum offer price that can be used to benefit from a commission reduction, including VAT. 
-*
-    * @return int|null
-    */
-    public function getMaximumPrice(): ?int 
+     * Maximum offer price that can be used to benefit from a commission reduction, including VAT.
+     *
+     * @return int|null
+     */
+    public function getMaximumPrice(): ?int
     {
         return $this->get('maximumPrice');
     }
@@ -40,17 +37,17 @@ class Reduction extends Resource
      * @param int|null $maximumPrice
      * @return $this
      */
-    public function setMaximumPrice(int $maximumPrice = null): static 
+    public function setMaximumPrice(int $maximumPrice = null): static
     {
         return $this->set('maximumPrice', $maximumPrice);
     }
 
     /**
-    * A reduction to the commission if the maximum price criteria is met, including VAT. 
-*
-    * @return float|null
-    */
-    public function getCostReduction(): ?float 
+     * A reduction to the commission if the maximum price criteria is met, including VAT.
+     *
+     * @return float|null
+     */
+    public function getCostReduction(): ?float
     {
         return $this->get('costReduction');
     }
@@ -59,17 +56,17 @@ class Reduction extends Resource
      * @param float|null $costReduction
      * @return $this
      */
-    public function setCostReduction(float $costReduction = null): static 
+    public function setCostReduction(float $costReduction = null): static
     {
         return $this->set('costReduction', $costReduction);
     }
 
     /**
-    * The start date from which the commission reduction is valid, in ISO 8601 format. 
-*
-    * @return string|null
-    */
-    public function getStartDate(): ?string 
+     * The start date from which the commission reduction is valid, in ISO 8601 format.
+     *
+     * @return string|null
+     */
+    public function getStartDate(): ?string
     {
         return $this->get('startDate');
     }
@@ -78,17 +75,17 @@ class Reduction extends Resource
      * @param string|null $startDate
      * @return $this
      */
-    public function setStartDate(string $startDate = null): static 
+    public function setStartDate(string $startDate = null): static
     {
         return $this->set('startDate', $startDate);
     }
 
     /**
-    * The end date from which the commission reduction is not valid anymore, in ISO 8601 format. 
-*
-    * @return string|null
-    */
-    public function getEndDate(): ?string 
+     * The end date from which the commission reduction is not valid anymore, in ISO 8601 format.
+     *
+     * @return string|null
+     */
+    public function getEndDate(): ?string
     {
         return $this->get('endDate');
     }
@@ -97,7 +94,7 @@ class Reduction extends Resource
      * @param string|null $endDate
      * @return $this
      */
-    public function setEndDate(string $endDate = null): static 
+    public function setEndDate(string $endDate = null): static
     {
         return $this->set('endDate', $endDate);
     }

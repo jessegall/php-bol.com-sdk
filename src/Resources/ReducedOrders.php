@@ -2,13 +2,12 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class ReducedOrders 
-* Container for many orders.
-*/
+ * Class ReducedOrders
+ * Container for many orders.
+ */
 class ReducedOrders extends Resource
 {
 
@@ -26,21 +25,20 @@ class ReducedOrders extends Resource
      */
     protected string $bolComResource = 'ReducedOrders';
 
-    
+
     /**
-    
-    * @return ResourceCollection<ReducedOrder>|null
-    */
-    public function getOrders(): ?ResourceCollection 
+     * @return ResourceCollection<ReducedOrder>|null
+     */
+    public function getOrders(): ?ResourceCollection
     {
-        return $this->relation('orders', ResourceCollection::class,true);
+        return $this->relation('orders', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<ReducedOrder>|null $orders
      * @return $this
      */
-    public function setOrders(ResourceCollection $orders = null): static 
+    public function setOrders(ResourceCollection $orders = null): static
     {
         return $this->set('orders', $orders);
     }

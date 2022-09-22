@@ -2,13 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Request;
 
 /**
-* Class UpdateOfferPriceRequest 
-*/
+ * Class UpdateOfferPriceRequest
+ */
 class UpdateOfferPriceRequest extends Resource implements Request
 {
     /**
@@ -32,12 +30,11 @@ class UpdateOfferPriceRequest extends Resource implements Request
      */
     protected string $bolComResource = 'UpdateOfferPriceRequest';
 
-    
+
     /**
-    
-    * @return Pricing|null
-    */
-    public function getPricing(): ?Pricing 
+     * @return Pricing|null
+     */
+    public function getPricing(): ?Pricing
     {
         return $this->relation('pricing', Pricing::class);
     }
@@ -46,7 +43,7 @@ class UpdateOfferPriceRequest extends Resource implements Request
      * @param Pricing|null $pricing
      * @return $this
      */
-    public function setPricing(Pricing $pricing = null): static 
+    public function setPricing(Pricing $pricing = null): static
     {
         return $this->set('pricing', $pricing);
     }

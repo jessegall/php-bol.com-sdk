@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class CountryCode 
-*/
+ * Class CountryCode
+ */
 class CountryCode extends Resource
 {
 
@@ -25,13 +22,13 @@ class CountryCode extends Resource
      */
     protected string $bolComResource = 'CountryCode';
 
-    
+
     /**
-    * Countries in which this offer is currently on sale in the webshop, in ISO-3166-1 format. 
-*
-    * @return string|null
-    */
-    public function getCountryCode(): ?string 
+     * Countries in which this offer is currently on sale in the webshop, in ISO-3166-1 format.
+     *
+     * @return string|null
+     */
+    public function getCountryCode(): ?string
     {
         return $this->get('countryCode');
     }
@@ -40,7 +37,7 @@ class CountryCode extends Resource
      * @param string|null $countryCode
      * @return $this
      */
-    public function setCountryCode(string $countryCode = null): static 
+    public function setCountryCode(string $countryCode = null): static
     {
         return $this->set('countryCode', $countryCode);
     }

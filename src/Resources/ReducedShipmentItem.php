@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class ReducedShipmentItem 
-*/
+ * Class ReducedShipmentItem
+ */
 class ReducedShipmentItem extends Resource
 {
 
@@ -25,13 +22,13 @@ class ReducedShipmentItem extends Resource
      */
     protected string $bolComResource = 'ReducedShipmentItem';
 
-    
+
     /**
-    * A unique identifier for the item of the order that was shipped in this shipment. 
-*
-    * @return string|null
-    */
-    public function getOrderItemId(): ?string 
+     * A unique identifier for the item of the order that was shipped in this shipment.
+     *
+     * @return string|null
+     */
+    public function getOrderItemId(): ?string
     {
         return $this->get('orderItemId');
     }
@@ -40,17 +37,17 @@ class ReducedShipmentItem extends Resource
      * @param string|null $orderItemId
      * @return $this
      */
-    public function setOrderItemId(string $orderItemId = null): static 
+    public function setOrderItemId(string $orderItemId = null): static
     {
         return $this->set('orderItemId', $orderItemId);
     }
 
     /**
-    * The EAN number associated with this product. 
-*
-    * @return string|null
-    */
-    public function getEan(): ?string 
+     * The EAN number associated with this product.
+     *
+     * @return string|null
+     */
+    public function getEan(): ?string
     {
         return $this->get('ean');
     }
@@ -59,7 +56,7 @@ class ReducedShipmentItem extends Resource
      * @param string|null $ean
      * @return $this
      */
-    public function setEan(string $ean = null): static 
+    public function setEan(string $ean = null): static
     {
         return $this->set('ean', $ean);
     }

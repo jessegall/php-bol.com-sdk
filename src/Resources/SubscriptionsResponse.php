@@ -2,13 +2,12 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Response;
+use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class SubscriptionsResponse 
-*/
+ * Class SubscriptionsResponse
+ */
 class SubscriptionsResponse extends Resource implements Response
 {
 
@@ -19,21 +18,20 @@ class SubscriptionsResponse extends Resource implements Response
      */
     protected string $bolComResource = 'SubscriptionsResponse';
 
-    
+
     /**
-    
-    * @return ResourceCollection<SubscriptionResponse>|null
-    */
-    public function getSubscriptions(): ?ResourceCollection 
+     * @return ResourceCollection<SubscriptionResponse>|null
+     */
+    public function getSubscriptions(): ?ResourceCollection
     {
-        return $this->relation('subscriptions', ResourceCollection::class,true);
+        return $this->relation('subscriptions', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<SubscriptionResponse>|null $subscriptions
      * @return $this
      */
-    public function setSubscriptions(ResourceCollection $subscriptions = null): static 
+    public function setSubscriptions(ResourceCollection $subscriptions = null): static
     {
         return $this->set('subscriptions', $subscriptions);
     }

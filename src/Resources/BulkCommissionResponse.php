@@ -2,13 +2,12 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Response;
+use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class BulkCommissionResponse 
-*/
+ * Class BulkCommissionResponse
+ */
 class BulkCommissionResponse extends Resource implements Response
 {
 
@@ -19,21 +18,20 @@ class BulkCommissionResponse extends Resource implements Response
      */
     protected string $bolComResource = 'BulkCommissionResponse';
 
-    
+
     /**
-    
-    * @return ResourceCollection<Commission>|null
-    */
-    public function getCommissions(): ?ResourceCollection 
+     * @return ResourceCollection<Commission>|null
+     */
+    public function getCommissions(): ?ResourceCollection
     {
-        return $this->relation('commissions', ResourceCollection::class,true);
+        return $this->relation('commissions', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<Commission>|null $commissions
      * @return $this
      */
-    public function setCommissions(ResourceCollection $commissions = null): static 
+    public function setCommissions(ResourceCollection $commissions = null): static
     {
         return $this->set('commissions', $commissions);
     }

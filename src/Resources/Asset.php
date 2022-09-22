@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class Asset 
-*/
+ * Class Asset
+ */
 class Asset extends Resource
 {
 
@@ -25,13 +22,13 @@ class Asset extends Resource
      */
     protected string $bolComResource = 'Asset';
 
-    
+
     /**
-    * The URL of the asset. 
-*
-    * @return string|null
-    */
-    public function getUrl(): ?string 
+     * The URL of the asset.
+     *
+     * @return string|null
+     */
+    public function getUrl(): ?string
     {
         return $this->get('url');
     }
@@ -40,17 +37,17 @@ class Asset extends Resource
      * @param string|null $url
      * @return $this
      */
-    public function setUrl(string $url = null): static 
+    public function setUrl(string $url = null): static
     {
         return $this->set('url', $url);
     }
 
     /**
-    * The label(s) of the asset. 
-*
-    * @return array|null
-    */
-    public function getLabels(): ?array 
+     * The label(s) of the asset.
+     *
+     * @return array|null
+     */
+    public function getLabels(): ?array
     {
         return $this->get('labels');
     }
@@ -59,7 +56,7 @@ class Asset extends Resource
      * @param array|null $labels
      * @return $this
      */
-    public function setLabels(array $labels = null): static 
+    public function setLabels(array $labels = null): static
     {
         return $this->set('labels', $labels);
     }

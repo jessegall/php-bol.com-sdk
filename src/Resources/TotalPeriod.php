@@ -2,12 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class TotalPeriod 
-*/
+ * Class TotalPeriod
+ */
 class TotalPeriod extends Resource
 {
 
@@ -25,12 +24,11 @@ class TotalPeriod extends Resource
      */
     protected string $bolComResource = 'TotalPeriod';
 
-    
+
     /**
-    
-    * @return SearchTermsPeriod|null
-    */
-    public function getPeriod(): ?SearchTermsPeriod 
+     * @return SearchTermsPeriod|null
+     */
+    public function getPeriod(): ?SearchTermsPeriod
     {
         return $this->relation('period', SearchTermsPeriod::class);
     }
@@ -39,17 +37,17 @@ class TotalPeriod extends Resource
      * @param SearchTermsPeriod|null $period
      * @return $this
      */
-    public function setPeriod(SearchTermsPeriod $period = null): static 
+    public function setPeriod(SearchTermsPeriod $period = null): static
     {
         return $this->set('period', $period);
     }
 
     /**
-    * The number of customer visits on the search page. 
-*
-    * @return int|null
-    */
-    public function getTotal(): ?int 
+     * The number of customer visits on the search page.
+     *
+     * @return int|null
+     */
+    public function getTotal(): ?int
     {
         return $this->get('total');
     }
@@ -58,25 +56,24 @@ class TotalPeriod extends Resource
      * @param int|null $total
      * @return $this
      */
-    public function setTotal(int $total = null): static 
+    public function setTotal(int $total = null): static
     {
         return $this->set('total', $total);
     }
 
     /**
-    
-    * @return ResourceCollection<SearchTermsCountry>|null
-    */
-    public function getCountries(): ?ResourceCollection 
+     * @return ResourceCollection<SearchTermsCountry>|null
+     */
+    public function getCountries(): ?ResourceCollection
     {
-        return $this->relation('countries', ResourceCollection::class,true);
+        return $this->relation('countries', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<SearchTermsCountry>|null $countries
      * @return $this
      */
-    public function setCountries(ResourceCollection $countries = null): static 
+    public function setCountries(ResourceCollection $countries = null): static
     {
         return $this->set('countries', $countries);
     }

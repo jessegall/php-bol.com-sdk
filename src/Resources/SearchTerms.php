@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class SearchTerms 
-*/
+ * Class SearchTerms
+ */
 class SearchTerms extends Resource
 {
 
@@ -25,12 +22,11 @@ class SearchTerms extends Resource
      */
     protected string $bolComResource = 'SearchTerms';
 
-    
+
     /**
-    
-    * @return SearchTerm|null
-    */
-    public function getSearchTerms(): ?SearchTerm 
+     * @return SearchTerm|null
+     */
+    public function getSearchTerms(): ?SearchTerm
     {
         return $this->relation('searchTerms', SearchTerm::class);
     }
@@ -39,7 +35,7 @@ class SearchTerms extends Resource
      * @param SearchTerm|null $searchTerms
      * @return $this
      */
-    public function setSearchTerms(SearchTerm $searchTerms = null): static 
+    public function setSearchTerms(SearchTerm $searchTerms = null): static
     {
         return $this->set('searchTerms', $searchTerms);
     }

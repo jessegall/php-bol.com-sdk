@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class CreateDeliveryInfo 
-*/
+ * Class CreateDeliveryInfo
+ */
 class CreateDeliveryInfo extends Resource
 {
 
@@ -25,13 +22,13 @@ class CreateDeliveryInfo extends Resource
      */
     protected string $bolComResource = 'CreateDeliveryInfo';
 
-    
+
     /**
-    * The expected delivery date of the shipment at the bol.com warehouse. In ISO 8601 format. 
-*
-    * @return string|null
-    */
-    public function getExpectedDeliveryDate(): ?string 
+     * The expected delivery date of the shipment at the bol.com warehouse. In ISO 8601 format.
+     *
+     * @return string|null
+     */
+    public function getExpectedDeliveryDate(): ?string
     {
         return $this->get('expectedDeliveryDate');
     }
@@ -40,17 +37,17 @@ class CreateDeliveryInfo extends Resource
      * @param string|null $expectedDeliveryDate
      * @return $this
      */
-    public function setExpectedDeliveryDate(string $expectedDeliveryDate = null): static 
+    public function setExpectedDeliveryDate(string $expectedDeliveryDate = null): static
     {
         return $this->set('expectedDeliveryDate', $expectedDeliveryDate);
     }
 
     /**
-    * The transporter code that correlates to the transport used for this replenishment. 
-*
-    * @return string|null
-    */
-    public function getTransporterCode(): ?string 
+     * The transporter code that correlates to the transport used for this replenishment.
+     *
+     * @return string|null
+     */
+    public function getTransporterCode(): ?string
     {
         return $this->get('transporterCode');
     }
@@ -59,7 +56,7 @@ class CreateDeliveryInfo extends Resource
      * @param string|null $transporterCode
      * @return $this
      */
-    public function setTransporterCode(string $transporterCode = null): static 
+    public function setTransporterCode(string $transporterCode = null): static
     {
         return $this->set('transporterCode', $transporterCode);
     }

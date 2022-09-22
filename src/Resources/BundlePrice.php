@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class BundlePrice 
-*/
+ * Class BundlePrice
+ */
 class BundlePrice extends Resource
 {
 
@@ -25,13 +22,13 @@ class BundlePrice extends Resource
      */
     protected string $bolComResource = 'BundlePrice';
 
-    
+
     /**
-    * The minimum quantity a customer must order in order to receive discount. The element with value 1 must at least be present. In case of using more elements, the respective quantities must be in increasing order. 
-*
-    * @return int|null
-    */
-    public function getQuantity(): ?int 
+     * The minimum quantity a customer must order in order to receive discount. The element with value 1 must at least be present. In case of using more elements, the respective quantities must be in increasing order.
+     *
+     * @return int|null
+     */
+    public function getQuantity(): ?int
     {
         return $this->get('quantity');
     }
@@ -40,17 +37,17 @@ class BundlePrice extends Resource
      * @param int|null $quantity
      * @return $this
      */
-    public function setQuantity(int $quantity = null): static 
+    public function setQuantity(int $quantity = null): static
     {
         return $this->set('quantity', $quantity);
     }
 
     /**
-    * The price per single unit including VAT in case the customer orders at least the quantity provided. When using more than 1 price, the respective prices must be in decreasing order using 2 decimal precision and dot separated. 
-*
-    * @return float|null
-    */
-    public function getUnitPrice(): ?float 
+     * The price per single unit including VAT in case the customer orders at least the quantity provided. When using more than 1 price, the respective prices must be in decreasing order using 2 decimal precision and dot separated.
+     *
+     * @return float|null
+     */
+    public function getUnitPrice(): ?float
     {
         return $this->get('unitPrice');
     }
@@ -59,7 +56,7 @@ class BundlePrice extends Resource
      * @param float|null $unitPrice
      * @return $this
      */
-    public function setUnitPrice(float $unitPrice = null): static 
+    public function setUnitPrice(float $unitPrice = null): static
     {
         return $this->set('unitPrice', $unitPrice);
     }

@@ -2,13 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Request;
 
 /**
-* Class ChangeTransportRequest 
-*/
+ * Class ChangeTransportRequest
+ */
 class ChangeTransportRequest extends Resource implements Request
 {
     /**
@@ -32,12 +30,11 @@ class ChangeTransportRequest extends Resource implements Request
      */
     protected string $bolComResource = 'ChangeTransportRequest';
 
-    
+
     /**
-    
-    * @return string|null
-    */
-    public function getTransporterCode(): ?string 
+     * @return string|null
+     */
+    public function getTransporterCode(): ?string
     {
         return $this->get('transporterCode');
     }
@@ -46,17 +43,17 @@ class ChangeTransportRequest extends Resource implements Request
      * @param string|null $transporterCode
      * @return $this
      */
-    public function setTransporterCode(string $transporterCode = null): static 
+    public function setTransporterCode(string $transporterCode = null): static
     {
         return $this->set('transporterCode', $transporterCode);
     }
 
     /**
-    * The track and trace code that is associated with this transport. 
-*
-    * @return string|null
-    */
-    public function getTrackAndTrace(): ?string 
+     * The track and trace code that is associated with this transport.
+     *
+     * @return string|null
+     */
+    public function getTrackAndTrace(): ?string
     {
         return $this->get('trackAndTrace');
     }
@@ -65,7 +62,7 @@ class ChangeTransportRequest extends Resource implements Request
      * @param string|null $trackAndTrace
      * @return $this
      */
-    public function setTrackAndTrace(string $trackAndTrace = null): static 
+    public function setTrackAndTrace(string $trackAndTrace = null): static
     {
         return $this->set('trackAndTrace', $trackAndTrace);
     }

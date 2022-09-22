@@ -2,12 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class Store 
-*/
+ * Class Store
+ */
 class Store extends Resource
 {
 
@@ -25,13 +24,13 @@ class Store extends Resource
      */
     protected string $bolComResource = 'Store';
 
-    
+
     /**
-    * The product title for the product associated with this offer. 
-*
-    * @return string|null
-    */
-    public function getProductTitle(): ?string 
+     * The product title for the product associated with this offer.
+     *
+     * @return string|null
+     */
+    public function getProductTitle(): ?string
     {
         return $this->get('productTitle');
     }
@@ -40,25 +39,24 @@ class Store extends Resource
      * @param string|null $productTitle
      * @return $this
      */
-    public function setProductTitle(string $productTitle = null): static 
+    public function setProductTitle(string $productTitle = null): static
     {
         return $this->set('productTitle', $productTitle);
     }
 
     /**
-    
-    * @return ResourceCollection<CountryCode>|null
-    */
-    public function getVisible(): ?ResourceCollection 
+     * @return ResourceCollection<CountryCode>|null
+     */
+    public function getVisible(): ?ResourceCollection
     {
-        return $this->relation('visible', ResourceCollection::class,true);
+        return $this->relation('visible', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<CountryCode>|null $visible
      * @return $this
      */
-    public function setVisible(ResourceCollection $visible = null): static 
+    public function setVisible(ResourceCollection $visible = null): static
     {
         return $this->set('visible', $visible);
     }

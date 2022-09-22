@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class PickupTimeSlotsAddress 
-*/
+ * Class PickupTimeSlotsAddress
+ */
 class PickupTimeSlotsAddress extends Resource
 {
 
@@ -25,13 +22,13 @@ class PickupTimeSlotsAddress extends Resource
      */
     protected string $bolComResource = 'PickupTimeSlotsAddress';
 
-    
+
     /**
-    * The street name of the pickup address. 
-*
-    * @return string|null
-    */
-    public function getStreetName(): ?string 
+     * The street name of the pickup address.
+     *
+     * @return string|null
+     */
+    public function getStreetName(): ?string
     {
         return $this->get('streetName');
     }
@@ -40,17 +37,17 @@ class PickupTimeSlotsAddress extends Resource
      * @param string|null $streetName
      * @return $this
      */
-    public function setStreetName(string $streetName = null): static 
+    public function setStreetName(string $streetName = null): static
     {
         return $this->set('streetName', $streetName);
     }
 
     /**
-    * The house number of the pickup address. 
-*
-    * @return string|null
-    */
-    public function getHouseNumber(): ?string 
+     * The house number of the pickup address.
+     *
+     * @return string|null
+     */
+    public function getHouseNumber(): ?string
     {
         return $this->get('houseNumber');
     }
@@ -59,17 +56,17 @@ class PickupTimeSlotsAddress extends Resource
      * @param string|null $houseNumber
      * @return $this
      */
-    public function setHouseNumber(string $houseNumber = null): static 
+    public function setHouseNumber(string $houseNumber = null): static
     {
         return $this->set('houseNumber', $houseNumber);
     }
 
     /**
-    * The extension of the house number. 
-*
-    * @return string|null
-    */
-    public function getHouseNumberExtension(): ?string 
+     * The extension of the house number.
+     *
+     * @return string|null
+     */
+    public function getHouseNumberExtension(): ?string
     {
         return $this->get('houseNumberExtension');
     }
@@ -78,17 +75,17 @@ class PickupTimeSlotsAddress extends Resource
      * @param string|null $houseNumberExtension
      * @return $this
      */
-    public function setHouseNumberExtension(string $houseNumberExtension = null): static 
+    public function setHouseNumberExtension(string $houseNumberExtension = null): static
     {
         return $this->set('houseNumberExtension', $houseNumberExtension);
     }
 
     /**
-    * The zip code in '1234AB' format for NL and '0000' for BE addresses. 
-*
-    * @return string|null
-    */
-    public function getZipCode(): ?string 
+     * The zip code in '1234AB' format for NL and '0000' for BE addresses.
+     *
+     * @return string|null
+     */
+    public function getZipCode(): ?string
     {
         return $this->get('zipCode');
     }
@@ -97,17 +94,17 @@ class PickupTimeSlotsAddress extends Resource
      * @param string|null $zipCode
      * @return $this
      */
-    public function setZipCode(string $zipCode = null): static 
+    public function setZipCode(string $zipCode = null): static
     {
         return $this->set('zipCode', $zipCode);
     }
 
     /**
-    * The city of the pickup address. 
-*
-    * @return string|null
-    */
-    public function getCity(): ?string 
+     * The city of the pickup address.
+     *
+     * @return string|null
+     */
+    public function getCity(): ?string
     {
         return $this->get('city');
     }
@@ -116,17 +113,17 @@ class PickupTimeSlotsAddress extends Resource
      * @param string|null $city
      * @return $this
      */
-    public function setCity(string $city = null): static 
+    public function setCity(string $city = null): static
     {
         return $this->set('city', $city);
     }
 
     /**
-    * The ISO 3166-2 country code. 
-*
-    * @return string|null
-    */
-    public function getCountryCode(): ?string 
+     * The ISO 3166-2 country code.
+     *
+     * @return string|null
+     */
+    public function getCountryCode(): ?string
     {
         return $this->get('countryCode');
     }
@@ -135,7 +132,7 @@ class PickupTimeSlotsAddress extends Resource
      * @param string|null $countryCode
      * @return $this
      */
-    public function setCountryCode(string $countryCode = null): static 
+    public function setCountryCode(string $countryCode = null): static
     {
         return $this->set('countryCode', $countryCode);
     }

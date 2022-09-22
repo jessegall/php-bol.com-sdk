@@ -2,13 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Request;
 
 /**
-* Class UpdateOfferRequest 
-*/
+ * Class UpdateOfferRequest
+ */
 class UpdateOfferRequest extends Resource implements Request
 {
     /**
@@ -32,13 +30,13 @@ class UpdateOfferRequest extends Resource implements Request
      */
     protected string $bolComResource = 'UpdateOfferRequest';
 
-    
+
     /**
-    * A user-defined reference that helps you identify this particular offer when receiving data from us. This element can optionally be left empty and has a maximum amount of 20 characters. 
-*
-    * @return string|null
-    */
-    public function getReference(): ?string 
+     * A user-defined reference that helps you identify this particular offer when receiving data from us. This element can optionally be left empty and has a maximum amount of 20 characters.
+     *
+     * @return string|null
+     */
+    public function getReference(): ?string
     {
         return $this->get('reference');
     }
@@ -47,17 +45,17 @@ class UpdateOfferRequest extends Resource implements Request
      * @param string|null $reference
      * @return $this
      */
-    public function setReference(string $reference = null): static 
+    public function setReference(string $reference = null): static
     {
         return $this->set('reference', $reference);
     }
 
     /**
-    * Indicates whether or not you want to put this offer for sale on the bol.com website. Defaults to false. 
-*
-    * @return bool|null
-    */
-    public function getOnHoldByRetailer(): ?bool 
+     * Indicates whether or not you want to put this offer for sale on the bol.com website. Defaults to false.
+     *
+     * @return bool|null
+     */
+    public function getOnHoldByRetailer(): ?bool
     {
         return $this->get('onHoldByRetailer');
     }
@@ -66,17 +64,17 @@ class UpdateOfferRequest extends Resource implements Request
      * @param bool|null $onHoldByRetailer
      * @return $this
      */
-    public function setOnHoldByRetailer(bool $onHoldByRetailer): static 
+    public function setOnHoldByRetailer(bool $onHoldByRetailer): static
     {
         return $this->set('onHoldByRetailer', $onHoldByRetailer);
     }
 
     /**
-    * In case the item is not known to bol.com you can use this field to identify this particular product. Note: in case the product is known to bol.com, the unknown product title will not be stored. 
-*
-    * @return string|null
-    */
-    public function getUnknownProductTitle(): ?string 
+     * In case the item is not known to bol.com you can use this field to identify this particular product. Note: in case the product is known to bol.com, the unknown product title will not be stored.
+     *
+     * @return string|null
+     */
+    public function getUnknownProductTitle(): ?string
     {
         return $this->get('unknownProductTitle');
     }
@@ -85,16 +83,15 @@ class UpdateOfferRequest extends Resource implements Request
      * @param string|null $unknownProductTitle
      * @return $this
      */
-    public function setUnknownProductTitle(string $unknownProductTitle = null): static 
+    public function setUnknownProductTitle(string $unknownProductTitle = null): static
     {
         return $this->set('unknownProductTitle', $unknownProductTitle);
     }
 
     /**
-    
-    * @return Fulfilment|null
-    */
-    public function getFulfilment(): ?Fulfilment 
+     * @return Fulfilment|null
+     */
+    public function getFulfilment(): ?Fulfilment
     {
         return $this->relation('fulfilment', Fulfilment::class);
     }
@@ -103,7 +100,7 @@ class UpdateOfferRequest extends Resource implements Request
      * @param Fulfilment|null $fulfilment
      * @return $this
      */
-    public function setFulfilment(Fulfilment $fulfilment = null): static 
+    public function setFulfilment(Fulfilment $fulfilment = null): static
     {
         return $this->set('fulfilment', $fulfilment);
     }

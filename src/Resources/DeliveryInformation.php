@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class DeliveryInformation 
-*/
+ * Class DeliveryInformation
+ */
 class DeliveryInformation extends Resource
 {
 
@@ -25,13 +22,13 @@ class DeliveryInformation extends Resource
      */
     protected string $bolComResource = 'DeliveryInformation';
 
-    
+
     /**
-    * The expected delivery date of the shipment at the bol.com warehouse in ISO 8601 format. 
-*
-    * @return string|null
-    */
-    public function getExpectedDeliveryDate(): ?string 
+     * The expected delivery date of the shipment at the bol.com warehouse in ISO 8601 format.
+     *
+     * @return string|null
+     */
+    public function getExpectedDeliveryDate(): ?string
     {
         return $this->get('expectedDeliveryDate');
     }
@@ -40,17 +37,17 @@ class DeliveryInformation extends Resource
      * @param string|null $expectedDeliveryDate
      * @return $this
      */
-    public function setExpectedDeliveryDate(string $expectedDeliveryDate = null): static 
+    public function setExpectedDeliveryDate(string $expectedDeliveryDate = null): static
     {
         return $this->set('expectedDeliveryDate', $expectedDeliveryDate);
     }
 
     /**
-    * The transporter that will pickup this replenishment. 
-*
-    * @return string|null
-    */
-    public function getTransporterCode(): ?string 
+     * The transporter that will pickup this replenishment.
+     *
+     * @return string|null
+     */
+    public function getTransporterCode(): ?string
     {
         return $this->get('transporterCode');
     }
@@ -59,16 +56,15 @@ class DeliveryInformation extends Resource
      * @param string|null $transporterCode
      * @return $this
      */
-    public function setTransporterCode(string $transporterCode = null): static 
+    public function setTransporterCode(string $transporterCode = null): static
     {
         return $this->set('transporterCode', $transporterCode);
     }
 
     /**
-    
-    * @return DestinationWarehouse|null
-    */
-    public function getDestinationWarehouse(): ?DestinationWarehouse 
+     * @return DestinationWarehouse|null
+     */
+    public function getDestinationWarehouse(): ?DestinationWarehouse
     {
         return $this->relation('destinationWarehouse', DestinationWarehouse::class);
     }
@@ -77,7 +73,7 @@ class DeliveryInformation extends Resource
      * @param DestinationWarehouse|null $destinationWarehouse
      * @return $this
      */
-    public function setDestinationWarehouse(DestinationWarehouse $destinationWarehouse = null): static 
+    public function setDestinationWarehouse(DestinationWarehouse $destinationWarehouse = null): static
     {
         return $this->set('destinationWarehouse', $destinationWarehouse);
     }

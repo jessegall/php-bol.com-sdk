@@ -2,13 +2,12 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class OrderOrderItem 
-* Order item details from an order.
-*/
+ * Class OrderOrderItem
+ * Order item details from an order.
+ */
 class OrderOrderItem extends Resource
 {
 
@@ -26,13 +25,13 @@ class OrderOrderItem extends Resource
      */
     protected string $bolComResource = 'OrderOrderItem';
 
-    
+
     /**
-    * The id for the order item. One order can have multiple order items, but the list can only take one item. 
-*
-    * @return string|null
-    */
-    public function getOrderItemId(): ?string 
+     * The id for the order item. One order can have multiple order items, but the list can only take one item.
+     *
+     * @return string|null
+     */
+    public function getOrderItemId(): ?string
     {
         return $this->get('orderItemId');
     }
@@ -41,17 +40,17 @@ class OrderOrderItem extends Resource
      * @param string|null $orderItemId
      * @return $this
      */
-    public function setOrderItemId(string $orderItemId = null): static 
+    public function setOrderItemId(string $orderItemId = null): static
     {
         return $this->set('orderItemId', $orderItemId);
     }
 
     /**
-    * Indicates whether the order was cancelled on request of the customer before the retailer has shipped it. 
-*
-    * @return bool|null
-    */
-    public function getCancellationRequest(): ?bool 
+     * Indicates whether the order was cancelled on request of the customer before the retailer has shipped it.
+     *
+     * @return bool|null
+     */
+    public function getCancellationRequest(): ?bool
     {
         return $this->get('cancellationRequest');
     }
@@ -60,16 +59,15 @@ class OrderOrderItem extends Resource
      * @param bool|null $cancellationRequest
      * @return $this
      */
-    public function setCancellationRequest(bool $cancellationRequest): static 
+    public function setCancellationRequest(bool $cancellationRequest): static
     {
         return $this->set('cancellationRequest', $cancellationRequest);
     }
 
     /**
-    
-    * @return OrderFulfilment|null
-    */
-    public function getFulfilment(): ?OrderFulfilment 
+     * @return OrderFulfilment|null
+     */
+    public function getFulfilment(): ?OrderFulfilment
     {
         return $this->relation('fulfilment', OrderFulfilment::class);
     }
@@ -78,16 +76,15 @@ class OrderOrderItem extends Resource
      * @param OrderFulfilment|null $fulfilment
      * @return $this
      */
-    public function setFulfilment(OrderFulfilment $fulfilment = null): static 
+    public function setFulfilment(OrderFulfilment $fulfilment = null): static
     {
         return $this->set('fulfilment', $fulfilment);
     }
 
     /**
-    
-    * @return OrderOffer|null
-    */
-    public function getOffer(): ?OrderOffer 
+     * @return OrderOffer|null
+     */
+    public function getOffer(): ?OrderOffer
     {
         return $this->relation('offer', OrderOffer::class);
     }
@@ -96,16 +93,15 @@ class OrderOrderItem extends Resource
      * @param OrderOffer|null $offer
      * @return $this
      */
-    public function setOffer(OrderOffer $offer = null): static 
+    public function setOffer(OrderOffer $offer = null): static
     {
         return $this->set('offer', $offer);
     }
 
     /**
-    
-    * @return OrderProduct|null
-    */
-    public function getProduct(): ?OrderProduct 
+     * @return OrderProduct|null
+     */
+    public function getProduct(): ?OrderProduct
     {
         return $this->relation('product', OrderProduct::class);
     }
@@ -114,17 +110,17 @@ class OrderOrderItem extends Resource
      * @param OrderProduct|null $product
      * @return $this
      */
-    public function setProduct(OrderProduct $product = null): static 
+    public function setProduct(OrderProduct $product = null): static
     {
         return $this->set('product', $product);
     }
 
     /**
-    * Amount of ordered products for this order item id. 
-*
-    * @return int|null
-    */
-    public function getQuantity(): ?int 
+     * Amount of ordered products for this order item id.
+     *
+     * @return int|null
+     */
+    public function getQuantity(): ?int
     {
         return $this->get('quantity');
     }
@@ -133,17 +129,17 @@ class OrderOrderItem extends Resource
      * @param int|null $quantity
      * @return $this
      */
-    public function setQuantity(int $quantity = null): static 
+    public function setQuantity(int $quantity = null): static
     {
         return $this->set('quantity', $quantity);
     }
 
     /**
-    * Amount of shipped products for this order item id. 
-*
-    * @return int|null
-    */
-    public function getQuantityShipped(): ?int 
+     * Amount of shipped products for this order item id.
+     *
+     * @return int|null
+     */
+    public function getQuantityShipped(): ?int
     {
         return $this->get('quantityShipped');
     }
@@ -152,17 +148,17 @@ class OrderOrderItem extends Resource
      * @param int|null $quantityShipped
      * @return $this
      */
-    public function setQuantityShipped(int $quantityShipped = null): static 
+    public function setQuantityShipped(int $quantityShipped = null): static
     {
         return $this->set('quantityShipped', $quantityShipped);
     }
 
     /**
-    * Amount of cancelled products for this order item id. 
-*
-    * @return int|null
-    */
-    public function getQuantityCancelled(): ?int 
+     * Amount of cancelled products for this order item id.
+     *
+     * @return int|null
+     */
+    public function getQuantityCancelled(): ?int
     {
         return $this->get('quantityCancelled');
     }
@@ -171,17 +167,17 @@ class OrderOrderItem extends Resource
      * @param int|null $quantityCancelled
      * @return $this
      */
-    public function setQuantityCancelled(int $quantityCancelled = null): static 
+    public function setQuantityCancelled(int $quantityCancelled = null): static
     {
         return $this->set('quantityCancelled', $quantityCancelled);
     }
 
     /**
-    * The selling price to the customer of a single unit including VAT. 
-*
-    * @return float|null
-    */
-    public function getUnitPrice(): ?float 
+     * The selling price to the customer of a single unit including VAT.
+     *
+     * @return float|null
+     */
+    public function getUnitPrice(): ?float
     {
         return $this->get('unitPrice');
     }
@@ -190,17 +186,17 @@ class OrderOrderItem extends Resource
      * @param float|null $unitPrice
      * @return $this
      */
-    public function setUnitPrice(float $unitPrice = null): static 
+    public function setUnitPrice(float $unitPrice = null): static
     {
         return $this->set('unitPrice', $unitPrice);
     }
 
     /**
-    * The commission for all quantities of this order item. 
-*
-    * @return float|null
-    */
-    public function getCommission(): ?float 
+     * The commission for all quantities of this order item.
+     *
+     * @return float|null
+     */
+    public function getCommission(): ?float
     {
         return $this->get('commission');
     }
@@ -209,25 +205,24 @@ class OrderOrderItem extends Resource
      * @param float|null $commission
      * @return $this
      */
-    public function setCommission(float $commission = null): static 
+    public function setCommission(float $commission = null): static
     {
         return $this->set('commission', $commission);
     }
 
     /**
-    
-    * @return ResourceCollection<AdditionalService>|null
-    */
-    public function getAdditionalServices(): ?ResourceCollection 
+     * @return ResourceCollection<AdditionalService>|null
+     */
+    public function getAdditionalServices(): ?ResourceCollection
     {
-        return $this->relation('additionalServices', ResourceCollection::class,true);
+        return $this->relation('additionalServices', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<AdditionalService>|null $additionalServices
      * @return $this
      */
-    public function setAdditionalServices(ResourceCollection $additionalServices = null): static 
+    public function setAdditionalServices(ResourceCollection $additionalServices = null): static
     {
         return $this->set('additionalServices', $additionalServices);
     }

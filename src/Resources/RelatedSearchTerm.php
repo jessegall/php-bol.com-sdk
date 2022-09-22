@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class RelatedSearchTerm 
-*/
+ * Class RelatedSearchTerm
+ */
 class RelatedSearchTerm extends Resource
 {
 
@@ -25,13 +22,13 @@ class RelatedSearchTerm extends Resource
      */
     protected string $bolComResource = 'RelatedSearchTerm';
 
-    
+
     /**
-    * The number of customer visits on the search page. 
-*
-    * @return int|null
-    */
-    public function getTotal(): ?int 
+     * The number of customer visits on the search page.
+     *
+     * @return int|null
+     */
+    public function getTotal(): ?int
     {
         return $this->get('total');
     }
@@ -40,17 +37,17 @@ class RelatedSearchTerm extends Resource
      * @param int|null $total
      * @return $this
      */
-    public function setTotal(int $total = null): static 
+    public function setTotal(int $total = null): static
     {
         return $this->set('total', $total);
     }
 
     /**
-    * The search term for which you requested the search volume. 
-*
-    * @return string|null
-    */
-    public function getSearchTerm(): ?string 
+     * The search term for which you requested the search volume.
+     *
+     * @return string|null
+     */
+    public function getSearchTerm(): ?string
     {
         return $this->get('searchTerm');
     }
@@ -59,7 +56,7 @@ class RelatedSearchTerm extends Resource
      * @param string|null $searchTerm
      * @return $this
      */
-    public function setSearchTerm(string $searchTerm = null): static 
+    public function setSearchTerm(string $searchTerm = null): static
     {
         return $this->set('searchTerm', $searchTerm);
     }

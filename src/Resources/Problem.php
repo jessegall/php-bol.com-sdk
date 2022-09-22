@@ -2,13 +2,12 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class Problem 
-* Describes a problem that occurred interacting with the API.
-*/
+ * Class Problem
+ * Describes a problem that occurred interacting with the API.
+ */
 class Problem extends Resource
 {
 
@@ -26,13 +25,13 @@ class Problem extends Resource
      */
     protected string $bolComResource = 'Problem';
 
-    
+
     /**
-    * Type URI for this problem. Fixed value: https://api.bol.com/problems. 
-*
-    * @return string|null
-    */
-    public function getType(): ?string 
+     * Type URI for this problem. Fixed value: https://api.bol.com/problems.
+     *
+     * @return string|null
+     */
+    public function getType(): ?string
     {
         return $this->get('type');
     }
@@ -41,17 +40,17 @@ class Problem extends Resource
      * @param string|null $type
      * @return $this
      */
-    public function setType(string $type = null): static 
+    public function setType(string $type = null): static
     {
         return $this->set('type', $type);
     }
 
     /**
-    * Title describing the nature of the problem. 
-*
-    * @return string|null
-    */
-    public function getTitle(): ?string 
+     * Title describing the nature of the problem.
+     *
+     * @return string|null
+     */
+    public function getTitle(): ?string
     {
         return $this->get('title');
     }
@@ -60,17 +59,17 @@ class Problem extends Resource
      * @param string|null $title
      * @return $this
      */
-    public function setTitle(string $title = null): static 
+    public function setTitle(string $title = null): static
     {
         return $this->set('title', $title);
     }
 
     /**
-    * HTTP status returned from the endpoint causing the problem. 
-*
-    * @return int|null
-    */
-    public function getStatus(): ?int 
+     * HTTP status returned from the endpoint causing the problem.
+     *
+     * @return int|null
+     */
+    public function getStatus(): ?int
     {
         return $this->get('status');
     }
@@ -79,17 +78,17 @@ class Problem extends Resource
      * @param int|null $status
      * @return $this
      */
-    public function setStatus(int $status = null): static 
+    public function setStatus(int $status = null): static
     {
         return $this->set('status', $status);
     }
 
     /**
-    * Detailed error message describing in additional detail what caused the service to return this problem. 
-*
-    * @return string|null
-    */
-    public function getDetail(): ?string 
+     * Detailed error message describing in additional detail what caused the service to return this problem.
+     *
+     * @return string|null
+     */
+    public function getDetail(): ?string
     {
         return $this->get('detail');
     }
@@ -98,17 +97,17 @@ class Problem extends Resource
      * @param string|null $detail
      * @return $this
      */
-    public function setDetail(string $detail = null): static 
+    public function setDetail(string $detail = null): static
     {
         return $this->set('detail', $detail);
     }
 
     /**
-    * Host identifier describing the server instance that reported the problem. 
-*
-    * @return string|null
-    */
-    public function getHost(): ?string 
+     * Host identifier describing the server instance that reported the problem.
+     *
+     * @return string|null
+     */
+    public function getHost(): ?string
     {
         return $this->get('host');
     }
@@ -117,17 +116,17 @@ class Problem extends Resource
      * @param string|null $host
      * @return $this
      */
-    public function setHost(string $host = null): static 
+    public function setHost(string $host = null): static
     {
         return $this->set('host', $host);
     }
 
     /**
-    * Full URI path of the resource that reported the problem. 
-*
-    * @return string|null
-    */
-    public function getInstance(): ?string 
+     * Full URI path of the resource that reported the problem.
+     *
+     * @return string|null
+     */
+    public function getInstance(): ?string
     {
         return $this->get('instance');
     }
@@ -136,25 +135,24 @@ class Problem extends Resource
      * @param string|null $instance
      * @return $this
      */
-    public function setInstance(string $instance = null): static 
+    public function setInstance(string $instance = null): static
     {
         return $this->set('instance', $instance);
     }
 
     /**
-    
-    * @return ResourceCollection<Violation>|null
-    */
-    public function getViolations(): ?ResourceCollection 
+     * @return ResourceCollection<Violation>|null
+     */
+    public function getViolations(): ?ResourceCollection
     {
-        return $this->relation('violations', ResourceCollection::class,true);
+        return $this->relation('violations', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<Violation>|null $violations
      * @return $this
      */
-    public function setViolations(ResourceCollection $violations = null): static 
+    public function setViolations(ResourceCollection $violations = null): static
     {
         return $this->set('violations', $violations);
     }

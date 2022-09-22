@@ -2,13 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Response;
 
 /**
-* Class SubscriptionResponse 
-*/
+ * Class SubscriptionResponse
+ */
 class SubscriptionResponse extends Resource implements Response
 {
 
@@ -19,13 +17,13 @@ class SubscriptionResponse extends Resource implements Response
      */
     protected string $bolComResource = 'SubscriptionResponse';
 
-    
+
     /**
-    * A unique identifier for the subscription. 
-*
-    * @return string|null
-    */
-    public function getId(): ?string 
+     * A unique identifier for the subscription.
+     *
+     * @return string|null
+     */
+    public function getId(): ?string
     {
         return $this->get('id');
     }
@@ -34,17 +32,17 @@ class SubscriptionResponse extends Resource implements Response
      * @param string|null $id
      * @return $this
      */
-    public function setId(string $id = null): static 
+    public function setId(string $id = null): static
     {
         return $this->set('id', $id);
     }
 
     /**
-    * Type of event. 
-*
-    * @return array|null
-    */
-    public function getResources(): ?array 
+     * Type of event.
+     *
+     * @return array|null
+     */
+    public function getResources(): ?array
     {
         return $this->get('resources');
     }
@@ -53,17 +51,17 @@ class SubscriptionResponse extends Resource implements Response
      * @param array|null $resources
      * @return $this
      */
-    public function setResources(array $resources = null): static 
+    public function setResources(array $resources = null): static
     {
         return $this->set('resources', $resources);
     }
 
     /**
-    * URL to receive this WebHook notification. 
-*
-    * @return string|null
-    */
-    public function getUrl(): ?string 
+     * URL to receive this WebHook notification.
+     *
+     * @return string|null
+     */
+    public function getUrl(): ?string
     {
         return $this->get('url');
     }
@@ -72,7 +70,7 @@ class SubscriptionResponse extends Resource implements Response
      * @param string|null $url
      * @return $this
      */
-    public function setUrl(string $url = null): static 
+    public function setUrl(string $url = null): static
     {
         return $this->set('url', $url);
     }

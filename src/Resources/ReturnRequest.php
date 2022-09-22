@@ -2,13 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Request;
 
 /**
-* Class ReturnRequest 
-*/
+ * Class ReturnRequest
+ */
 class ReturnRequest extends Resource implements Request
 {
     /**
@@ -32,13 +30,13 @@ class ReturnRequest extends Resource implements Request
      */
     protected string $bolComResource = 'ReturnRequest';
 
-    
+
     /**
-    * The handling result requested by the retailer. 
-*
-    * @return string|null
-    */
-    public function getHandlingResult(): ?string 
+     * The handling result requested by the retailer.
+     *
+     * @return string|null
+     */
+    public function getHandlingResult(): ?string
     {
         return $this->get('handlingResult');
     }
@@ -47,17 +45,17 @@ class ReturnRequest extends Resource implements Request
      * @param string|null $handlingResult
      * @return $this
      */
-    public function setHandlingResult(string $handlingResult = null): static 
+    public function setHandlingResult(string $handlingResult = null): static
     {
         return $this->set('handlingResult', $handlingResult);
     }
 
     /**
-    * The quantity of items returned. 
-*
-    * @return int|null
-    */
-    public function getQuantityReturned(): ?int 
+     * The quantity of items returned.
+     *
+     * @return int|null
+     */
+    public function getQuantityReturned(): ?int
     {
         return $this->get('quantityReturned');
     }
@@ -66,7 +64,7 @@ class ReturnRequest extends Resource implements Request
      * @param int|null $quantityReturned
      * @return $this
      */
-    public function setQuantityReturned(int $quantityReturned = null): static 
+    public function setQuantityReturned(int $quantityReturned = null): static
     {
         return $this->set('quantityReturned', $quantityReturned);
     }

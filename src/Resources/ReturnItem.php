@@ -2,12 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class ReturnItem 
-*/
+ * Class ReturnItem
+ */
 class ReturnItem extends Resource
 {
 
@@ -25,13 +24,13 @@ class ReturnItem extends Resource
      */
     protected string $bolComResource = 'ReturnItem';
 
-    
+
     /**
-    * The RMA (Return Merchandise Authorization) identifier of the return. 
-*
-    * @return string|null
-    */
-    public function getRmaId(): ?string 
+     * The RMA (Return Merchandise Authorization) identifier of the return.
+     *
+     * @return string|null
+     */
+    public function getRmaId(): ?string
     {
         return $this->get('rmaId');
     }
@@ -40,17 +39,17 @@ class ReturnItem extends Resource
      * @param string|null $rmaId
      * @return $this
      */
-    public function setRmaId(string $rmaId = null): static 
+    public function setRmaId(string $rmaId = null): static
     {
         return $this->set('rmaId', $rmaId);
     }
 
     /**
-    * The id of the customer order this return item is in. 
-*
-    * @return string|null
-    */
-    public function getOrderId(): ?string 
+     * The id of the customer order this return item is in.
+     *
+     * @return string|null
+     */
+    public function getOrderId(): ?string
     {
         return $this->get('orderId');
     }
@@ -59,17 +58,17 @@ class ReturnItem extends Resource
      * @param string|null $orderId
      * @return $this
      */
-    public function setOrderId(string $orderId = null): static 
+    public function setOrderId(string $orderId = null): static
     {
         return $this->set('orderId', $orderId);
     }
 
     /**
-    * The EAN number associated with this product. 
-*
-    * @return string|null
-    */
-    public function getEan(): ?string 
+     * The EAN number associated with this product.
+     *
+     * @return string|null
+     */
+    public function getEan(): ?string
     {
         return $this->get('ean');
     }
@@ -78,17 +77,17 @@ class ReturnItem extends Resource
      * @param string|null $ean
      * @return $this
      */
-    public function setEan(string $ean = null): static 
+    public function setEan(string $ean = null): static
     {
         return $this->set('ean', $ean);
     }
 
     /**
-    * The product title. 
-*
-    * @return string|null
-    */
-    public function getTitle(): ?string 
+     * The product title.
+     *
+     * @return string|null
+     */
+    public function getTitle(): ?string
     {
         return $this->get('title');
     }
@@ -97,17 +96,17 @@ class ReturnItem extends Resource
      * @param string|null $title
      * @return $this
      */
-    public function setTitle(string $title = null): static 
+    public function setTitle(string $title = null): static
     {
         return $this->set('title', $title);
     }
 
     /**
-    * The quantity that is expected to be returned by the customer. Note: this can be greater than 1 in case the customer ordered a quantity greater than 1 of the same product in the same customer order. 
-*
-    * @return int|null
-    */
-    public function getExpectedQuantity(): ?int 
+     * The quantity that is expected to be returned by the customer. Note: this can be greater than 1 in case the customer ordered a quantity greater than 1 of the same product in the same customer order.
+     *
+     * @return int|null
+     */
+    public function getExpectedQuantity(): ?int
     {
         return $this->get('expectedQuantity');
     }
@@ -116,16 +115,15 @@ class ReturnItem extends Resource
      * @param int|null $expectedQuantity
      * @return $this
      */
-    public function setExpectedQuantity(int $expectedQuantity = null): static 
+    public function setExpectedQuantity(int $expectedQuantity = null): static
     {
         return $this->set('expectedQuantity', $expectedQuantity);
     }
 
     /**
-    
-    * @return ReturnReason|null
-    */
-    public function getReturnReason(): ?ReturnReason 
+     * @return ReturnReason|null
+     */
+    public function getReturnReason(): ?ReturnReason
     {
         return $this->relation('returnReason', ReturnReason::class);
     }
@@ -134,17 +132,17 @@ class ReturnItem extends Resource
      * @param ReturnReason|null $returnReason
      * @return $this
      */
-    public function setReturnReason(ReturnReason $returnReason = null): static 
+    public function setReturnReason(ReturnReason $returnReason = null): static
     {
         return $this->set('returnReason', $returnReason);
     }
 
     /**
-    * The track and trace code that is associated with this transport. 
-*
-    * @return string|null
-    */
-    public function getTrackAndTrace(): ?string 
+     * The track and trace code that is associated with this transport.
+     *
+     * @return string|null
+     */
+    public function getTrackAndTrace(): ?string
     {
         return $this->get('trackAndTrace');
     }
@@ -153,17 +151,17 @@ class ReturnItem extends Resource
      * @param string|null $trackAndTrace
      * @return $this
      */
-    public function setTrackAndTrace(string $trackAndTrace = null): static 
+    public function setTrackAndTrace(string $trackAndTrace = null): static
     {
         return $this->set('trackAndTrace', $trackAndTrace);
     }
 
     /**
-    * The name of the transporter. 
-*
-    * @return string|null
-    */
-    public function getTransporterName(): ?string 
+     * The name of the transporter.
+     *
+     * @return string|null
+     */
+    public function getTransporterName(): ?string
     {
         return $this->get('transporterName');
     }
@@ -172,17 +170,17 @@ class ReturnItem extends Resource
      * @param string|null $transporterName
      * @return $this
      */
-    public function setTransporterName(string $transporterName = null): static 
+    public function setTransporterName(string $transporterName = null): static
     {
         return $this->set('transporterName', $transporterName);
     }
 
     /**
-    * Indicates if this return item has been handled (by the retailer). 
-*
-    * @return bool|null
-    */
-    public function getHandled(): ?bool 
+     * Indicates if this return item has been handled (by the retailer).
+     *
+     * @return bool|null
+     */
+    public function getHandled(): ?bool
     {
         return $this->get('handled');
     }
@@ -191,34 +189,32 @@ class ReturnItem extends Resource
      * @param bool|null $handled
      * @return $this
      */
-    public function setHandled(bool $handled): static 
+    public function setHandled(bool $handled): static
     {
         return $this->set('handled', $handled);
     }
 
     /**
-    
-    * @return ResourceCollection<ReturnProcessingResult>|null
-    */
-    public function getProcessingResults(): ?ResourceCollection 
+     * @return ResourceCollection<ReturnProcessingResult>|null
+     */
+    public function getProcessingResults(): ?ResourceCollection
     {
-        return $this->relation('processingResults', ResourceCollection::class,true);
+        return $this->relation('processingResults', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<ReturnProcessingResult>|null $processingResults
      * @return $this
      */
-    public function setProcessingResults(ResourceCollection $processingResults = null): static 
+    public function setProcessingResults(ResourceCollection $processingResults = null): static
     {
         return $this->set('processingResults', $processingResults);
     }
 
     /**
-    
-    * @return CustomerDetails|null
-    */
-    public function getCustomerDetails(): ?CustomerDetails 
+     * @return CustomerDetails|null
+     */
+    public function getCustomerDetails(): ?CustomerDetails
     {
         return $this->relation('customerDetails', CustomerDetails::class);
     }
@@ -227,7 +223,7 @@ class ReturnItem extends Resource
      * @param CustomerDetails|null $customerDetails
      * @return $this
      */
-    public function setCustomerDetails(CustomerDetails $customerDetails = null): static 
+    public function setCustomerDetails(CustomerDetails $customerDetails = null): static
     {
         return $this->set('customerDetails', $customerDetails);
     }

@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class PerformanceIndicatorPeriod 
-*/
+ * Class PerformanceIndicatorPeriod
+ */
 class PerformanceIndicatorPeriod extends Resource
 {
 
@@ -25,13 +22,13 @@ class PerformanceIndicatorPeriod extends Resource
      */
     protected string $bolComResource = 'PerformanceIndicatorPeriod';
 
-    
+
     /**
-    * Week number in the ISO-8601 standard. 
-*
-    * @return string|null
-    */
-    public function getWeek(): ?string 
+     * Week number in the ISO-8601 standard.
+     *
+     * @return string|null
+     */
+    public function getWeek(): ?string
     {
         return $this->get('week');
     }
@@ -40,17 +37,17 @@ class PerformanceIndicatorPeriod extends Resource
      * @param string|null $week
      * @return $this
      */
-    public function setWeek(string $week = null): static 
+    public function setWeek(string $week = null): static
     {
         return $this->set('week', $week);
     }
 
     /**
-    * Year number in the ISO-8601 standard. 
-*
-    * @return string|null
-    */
-    public function getYear(): ?string 
+     * Year number in the ISO-8601 standard.
+     *
+     * @return string|null
+     */
+    public function getYear(): ?string
     {
         return $this->get('year');
     }
@@ -59,7 +56,7 @@ class PerformanceIndicatorPeriod extends Resource
      * @param string|null $year
      * @return $this
      */
-    public function setYear(string $year = null): static 
+    public function setYear(string $year = null): static
     {
         return $this->set('year', $year);
     }

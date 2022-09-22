@@ -2,12 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class PerformanceIndicators 
-*/
+ * Class PerformanceIndicators
+ */
 class PerformanceIndicators extends Resource
 {
 
@@ -25,21 +24,20 @@ class PerformanceIndicators extends Resource
      */
     protected string $bolComResource = 'PerformanceIndicators';
 
-    
+
     /**
-    
-    * @return ResourceCollection<PerformanceIndicator>|null
-    */
-    public function getPerformanceIndicators(): ?ResourceCollection 
+     * @return ResourceCollection<PerformanceIndicator>|null
+     */
+    public function getPerformanceIndicators(): ?ResourceCollection
     {
-        return $this->relation('performanceIndicators', ResourceCollection::class,true);
+        return $this->relation('performanceIndicators', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<PerformanceIndicator>|null $performanceIndicators
      * @return $this
      */
-    public function setPerformanceIndicators(ResourceCollection $performanceIndicators = null): static 
+    public function setPerformanceIndicators(ResourceCollection $performanceIndicators = null): static
     {
         return $this->set('performanceIndicators', $performanceIndicators);
     }

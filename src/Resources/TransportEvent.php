@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class TransportEvent 
-*/
+ * Class TransportEvent
+ */
 class TransportEvent extends Resource
 {
 
@@ -25,13 +22,13 @@ class TransportEvent extends Resource
      */
     protected string $bolComResource = 'TransportEvent';
 
-    
+
     /**
-    * The transport event code indicates the location of the parcel within the distribution process. 
-*
-    * @return string|null
-    */
-    public function getEventCode(): ?string 
+     * The transport event code indicates the location of the parcel within the distribution process.
+     *
+     * @return string|null
+     */
+    public function getEventCode(): ?string
     {
         return $this->get('eventCode');
     }
@@ -40,17 +37,17 @@ class TransportEvent extends Resource
      * @param string|null $eventCode
      * @return $this
      */
-    public function setEventCode(string $eventCode = null): static 
+    public function setEventCode(string $eventCode = null): static
     {
         return $this->set('eventCode', $eventCode);
     }
 
     /**
-    * The date time of the transport event. 
-*
-    * @return string|null
-    */
-    public function getEventDateTime(): ?string 
+     * The date time of the transport event.
+     *
+     * @return string|null
+     */
+    public function getEventDateTime(): ?string
     {
         return $this->get('eventDateTime');
     }
@@ -59,7 +56,7 @@ class TransportEvent extends Resource
      * @param string|null $eventDateTime
      * @return $this
      */
-    public function setEventDateTime(string $eventDateTime = null): static 
+    public function setEventDateTime(string $eventDateTime = null): static
     {
         return $this->set('eventDateTime', $eventDateTime);
     }

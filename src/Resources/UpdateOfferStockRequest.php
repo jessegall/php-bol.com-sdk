@@ -2,13 +2,11 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Request;
 
 /**
-* Class UpdateOfferStockRequest 
-*/
+ * Class UpdateOfferStockRequest
+ */
 class UpdateOfferStockRequest extends Resource implements Request
 {
     /**
@@ -32,13 +30,13 @@ class UpdateOfferStockRequest extends Resource implements Request
      */
     protected string $bolComResource = 'UpdateOfferStockRequest';
 
-    
+
     /**
-    * The amount of stock available for the specified product present in the retailers warehouse. Note: this should not be the FBB stock! Defaults to 0. 
-*
-    * @return int|null
-    */
-    public function getAmount(): ?int 
+     * The amount of stock available for the specified product present in the retailers warehouse. Note: this should not be the FBB stock! Defaults to 0.
+     *
+     * @return int|null
+     */
+    public function getAmount(): ?int
     {
         return $this->get('amount');
     }
@@ -47,17 +45,17 @@ class UpdateOfferStockRequest extends Resource implements Request
      * @param int|null $amount
      * @return $this
      */
-    public function setAmount(int $amount = null): static 
+    public function setAmount(int $amount = null): static
     {
         return $this->set('amount', $amount);
     }
 
     /**
-    * Configures whether the retailer manages the stock levels or that bol.com should calculate the corrected stock based on actual open orders. In case the configuration is set to 'false', all open orders are used to calculate the corrected stock. In case the configuration is set to 'true', only orders that are placed after the last offer update are taken into account. 
-*
-    * @return bool|null
-    */
-    public function getManagedByRetailer(): ?bool 
+     * Configures whether the retailer manages the stock levels or that bol.com should calculate the corrected stock based on actual open orders. In case the configuration is set to 'false', all open orders are used to calculate the corrected stock. In case the configuration is set to 'true', only orders that are placed after the last offer update are taken into account.
+     *
+     * @return bool|null
+     */
+    public function getManagedByRetailer(): ?bool
     {
         return $this->get('managedByRetailer');
     }
@@ -66,7 +64,7 @@ class UpdateOfferStockRequest extends Resource implements Request
      * @param bool|null $managedByRetailer
      * @return $this
      */
-    public function setManagedByRetailer(bool $managedByRetailer): static 
+    public function setManagedByRetailer(bool $managedByRetailer): static
     {
         return $this->set('managedByRetailer', $managedByRetailer);
     }

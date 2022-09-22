@@ -2,13 +2,12 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Response;
+use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class PickupTimeSlotsResponse 
-*/
+ * Class PickupTimeSlotsResponse
+ */
 class PickupTimeSlotsResponse extends Resource implements Response
 {
 
@@ -19,21 +18,20 @@ class PickupTimeSlotsResponse extends Resource implements Response
      */
     protected string $bolComResource = 'PickupTimeSlotsResponse';
 
-    
+
     /**
-    
-    * @return ResourceCollection<PickupTimeSlot>|null
-    */
-    public function getTimeSlots(): ?ResourceCollection 
+     * @return ResourceCollection<PickupTimeSlot>|null
+     */
+    public function getTimeSlots(): ?ResourceCollection
     {
-        return $this->relation('timeSlots', ResourceCollection::class,true);
+        return $this->relation('timeSlots', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<PickupTimeSlot>|null $timeSlots
      * @return $this
      */
-    public function setTimeSlots(ResourceCollection $timeSlots = null): static 
+    public function setTimeSlots(ResourceCollection $timeSlots = null): static
     {
         return $this->set('timeSlots', $timeSlots);
     }

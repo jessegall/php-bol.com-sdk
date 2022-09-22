@@ -2,13 +2,12 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Response;
+use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class KeySetResponse 
-*/
+ * Class KeySetResponse
+ */
 class KeySetResponse extends Resource implements Response
 {
 
@@ -19,21 +18,20 @@ class KeySetResponse extends Resource implements Response
      */
     protected string $bolComResource = 'KeySetResponse';
 
-    
+
     /**
-    
-    * @return ResourceCollection<KeySet>|null
-    */
-    public function getSignatureKeys(): ?ResourceCollection 
+     * @return ResourceCollection<KeySet>|null
+     */
+    public function getSignatureKeys(): ?ResourceCollection
     {
-        return $this->relation('signatureKeys', ResourceCollection::class,true);
+        return $this->relation('signatureKeys', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<KeySet>|null $signatureKeys
      * @return $this
      */
-    public function setSignatureKeys(ResourceCollection $signatureKeys = null): static 
+    public function setSignatureKeys(ResourceCollection $signatureKeys = null): static
     {
         return $this->set('signatureKeys', $signatureKeys);
     }

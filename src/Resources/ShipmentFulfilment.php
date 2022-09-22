@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class ShipmentFulfilment 
-*/
+ * Class ShipmentFulfilment
+ */
 class ShipmentFulfilment extends Resource
 {
 
@@ -25,13 +22,13 @@ class ShipmentFulfilment extends Resource
      */
     protected string $bolComResource = 'ShipmentFulfilment';
 
-    
+
     /**
-    * The fulfilment method. Fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB). 
-*
-    * @return string|null
-    */
-    public function getMethod(): ?string 
+     * The fulfilment method. Fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB).
+     *
+     * @return string|null
+     */
+    public function getMethod(): ?string
     {
         return $this->get('method');
     }
@@ -40,17 +37,17 @@ class ShipmentFulfilment extends Resource
      * @param string|null $method
      * @return $this
      */
-    public function setMethod(string $method = null): static 
+    public function setMethod(string $method = null): static
     {
         return $this->set('method', $method);
     }
 
     /**
-    * The party that manages the distribution, either bol.com or the retailer itself. 
-*
-    * @return string|null
-    */
-    public function getDistributionParty(): ?string 
+     * The party that manages the distribution, either bol.com or the retailer itself.
+     *
+     * @return string|null
+     */
+    public function getDistributionParty(): ?string
     {
         return $this->get('distributionParty');
     }
@@ -59,17 +56,17 @@ class ShipmentFulfilment extends Resource
      * @param string|null $distributionParty
      * @return $this
      */
-    public function setDistributionParty(string $distributionParty = null): static 
+    public function setDistributionParty(string $distributionParty = null): static
     {
         return $this->set('distributionParty', $distributionParty);
     }
 
     /**
-    * The ultimate delivery date at which this order must be delivered at the customer's shipping address. This field is empty in case the exactDeliveryDate is filled. 
-*
-    * @return string|null
-    */
-    public function getLatestDeliveryDate(): ?string 
+     * The ultimate delivery date at which this order must be delivered at the customer's shipping address. This field is empty in case the exactDeliveryDate is filled.
+     *
+     * @return string|null
+     */
+    public function getLatestDeliveryDate(): ?string
     {
         return $this->get('latestDeliveryDate');
     }
@@ -78,7 +75,7 @@ class ShipmentFulfilment extends Resource
      * @param string|null $latestDeliveryDate
      * @return $this
      */
-    public function setLatestDeliveryDate(string $latestDeliveryDate = null): static 
+    public function setLatestDeliveryDate(string $latestDeliveryDate = null): static
     {
         return $this->set('latestDeliveryDate', $latestDeliveryDate);
     }

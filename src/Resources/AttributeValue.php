@@ -2,12 +2,9 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
-
 /**
-* Class AttributeValue 
-*/
+ * Class AttributeValue
+ */
 class AttributeValue extends Resource
 {
 
@@ -25,13 +22,13 @@ class AttributeValue extends Resource
      */
     protected string $bolComResource = 'AttributeValue';
 
-    
+
     /**
-    * The value of the attribute. 
-*
-    * @return string|null
-    */
-    public function getValue(): ?string 
+     * The value of the attribute.
+     *
+     * @return string|null
+     */
+    public function getValue(): ?string
     {
         return $this->get('value');
     }
@@ -40,17 +37,17 @@ class AttributeValue extends Resource
      * @param string|null $value
      * @return $this
      */
-    public function setValue(string $value = null): static 
+    public function setValue(string $value = null): static
     {
         return $this->set('value', $value);
     }
 
     /**
-    * The unit identifier of the attribute. 
-*
-    * @return string|null
-    */
-    public function getUnitId(): ?string 
+     * The unit identifier of the attribute.
+     *
+     * @return string|null
+     */
+    public function getUnitId(): ?string
     {
         return $this->get('unitId');
     }
@@ -59,7 +56,7 @@ class AttributeValue extends Resource
      * @param string|null $unitId
      * @return $this
      */
-    public function setUnitId(string $unitId = null): static 
+    public function setUnitId(string $unitId = null): static
     {
         return $this->set('unitId', $unitId);
     }

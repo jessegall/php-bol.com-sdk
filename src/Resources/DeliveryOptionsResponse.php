@@ -2,14 +2,13 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-use JesseGall\BolComSDK\Resources\Resource;
-use JesseGall\Resources\ResourceCollection;
 use JesseGall\BolComSDK\Resources\Contracts\Response;
+use JesseGall\Resources\ResourceCollection;
 
 /**
-* Class DeliveryOptionsResponse 
-* The possible delivery options based on a shippable configuration
-*/
+ * Class DeliveryOptionsResponse
+ * The possible delivery options based on a shippable configuration
+ */
 class DeliveryOptionsResponse extends Resource implements Response
 {
 
@@ -20,21 +19,20 @@ class DeliveryOptionsResponse extends Resource implements Response
      */
     protected string $bolComResource = 'DeliveryOptionsResponse';
 
-    
+
     /**
-    
-    * @return ResourceCollection<DeliveryOption>|null
-    */
-    public function getDeliveryOptions(): ?ResourceCollection 
+     * @return ResourceCollection<DeliveryOption>|null
+     */
+    public function getDeliveryOptions(): ?ResourceCollection
     {
-        return $this->relation('deliveryOptions', ResourceCollection::class,true);
+        return $this->relation('deliveryOptions', ResourceCollection::class, true);
     }
 
     /**
      * @param ResourceCollection<DeliveryOption>|null $deliveryOptions
      * @return $this
      */
-    public function setDeliveryOptions(ResourceCollection $deliveryOptions = null): static 
+    public function setDeliveryOptions(ResourceCollection $deliveryOptions = null): static
     {
         return $this->set('deliveryOptions', $deliveryOptions);
     }
