@@ -1,11 +1,30 @@
 const fs = require('fs');
 const pluralize = require('pluralize');
+const path = require("path");
 
 String.prototype.ucfirst = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
+String.prototype.pluralize = function () {
+    return pluralize.plural(this);
+}
+
+String.prototype.singular = function () {
+    return pluralize.singluar(this);
+}
+
+String.prototype.snake = function () {
+    return this.split(/(?=[A-Z])/).join('_').toLowerCase();
+}
+
+String.prototype.kebab = function () {
+    return this.split(/(?=[A-Z])/).join('-').toLowerCase();
+}
+
 const definitions = getDefinitions();
+const names = Object.keys(definitions);
+const paths = getPaths();
 
 for (const [name, config] of Object.entries(definitions)) {
     const phpClass = createPhpClass(name, config);
@@ -16,8 +35,14 @@ function getDefinitions() {
     return JSON.parse(fs.readFileSync(`${ __dirname }/../api.json`, "utf-8")).definitions;
 }
 
+function getPaths() {
+    return JSON.parse(fs.readFileSync(`${ __dirname }/../api.json`, "utf-8")).paths;
+}
+
 function createPhpClass(name, config) {
-    const stub = getStub();
+    config._type = name.endsWith('Request') ? 'request' : name.endsWith('Response') ? 'response' : 'resource';
+
+    const stub = getStub(config._type);
 
     const methods = [];
 
@@ -30,15 +55,24 @@ function createPhpClass(name, config) {
         )
     }
 
+    const endpoint = findEndpoint(name, config);
+
+    if (! endpoint) {
+        console.log(name);
+    }
+
     return stub
         .replaceAll('{{ class }}', name.ucfirst())
-        .replaceAll('{{ endpoint }}', 'endpoint')
+        .replaceAll('{{ description }}', config.description ? `\n* ${ config.description }` : '')
+        .replaceAll('{{ endpoint }}', endpoint ? `'${ findEndpoint(name, config) }'` : null)
+        .replaceAll('{{ endpointMethods }}', Object.keys(paths[endpoint] || {}).join("' , '"))
         .replaceAll('{{ bolComResource }}', name)
+        .replaceAll('{{ response }}', findResponse(name, config))
         .replaceAll('{{ methods }}', methods.join("\n"));
 }
 
-function getStub() {
-    return fs.readFileSync(`${ __dirname }/stubs/resource.stub`, 'utf-8');
+function getStub(type) {
+    return fs.readFileSync(`${ __dirname }/stubs/${ type }.stub`, 'utf-8');
 }
 
 function setupPHPType(property) {
@@ -72,6 +106,7 @@ function setupPHPType(property) {
             property.type = ref ? 'ResourceCollection' : 'array';
             return;
         }
+
         case undefined: {
             const ref = property.$ref;
             property.relation = true;
@@ -122,4 +157,50 @@ function createMethod(name, arguments, returnType, inner) {
     {
         ${ inner }
     }`
+}
+
+function findEndpoint(name, config) {
+    if (config._type === 'request') {
+        return Object.keys(paths).find(key => {
+            const path = paths[key];
+
+            return ['put', 'post'].find(
+                method => path[method]?.parameters.find(i => i.name === 'body')?.schema.$ref.split('/').reverse()[0] === name
+            )
+        });
+    }
+
+    if (config._type === 'resource') {
+        const operationId = `get-${ name.kebab() }`
+
+        return Object.keys(paths).find(key => {
+            const path = paths[key];
+
+            // Check if opration can be found by name
+            let found = Object.values(path).find(i => i.operationId === operationId);
+
+            if (found) {
+                return true;
+            }
+
+            // Check if operation can be found by reference
+            return Object.values(path).find(
+                i => Object.values(i.responses)
+                    .filter(i => !! i.schema?.$ref)
+                    .find(i => i.schema.$ref.split('/').reverse()[0] === name)
+            );
+        });
+    }
+
+    return null;
+}
+
+function findResponse(name, config) {
+    if (config._type !== 'request') {
+        return null;
+    }
+
+    const response = name.replace('Request', 'Response');
+
+    return names.find(i => i === response) ? `${ response }::class` : null;
 }

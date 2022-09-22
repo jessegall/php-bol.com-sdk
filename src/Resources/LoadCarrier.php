@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class LoadCarrier 
+*/
 class LoadCarrier extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'LoadCarrier';
 
-
+    
     /**
-     * The Serial Shipping Container Code (SSCC) for this load carrier.
-     *
-     * @return string|null
-     */
-    public function getSscc(): ?string
+    * The Serial Shipping Container Code (SSCC) for this load carrier. 
+*
+    * @return string|null
+    */
+    public function getSscc(): ?string 
     {
         return $this->get('sscc');
     }
@@ -34,17 +40,17 @@ class LoadCarrier extends Resource
      * @param string|null $sscc
      * @return $this
      */
-    public function setSscc(string $sscc = null): static
+    public function setSscc(string $sscc = null): static 
     {
         return $this->set('sscc', $sscc);
     }
 
     /**
-     * The track and trace code for this load carrier.
-     *
-     * @return string|null
-     */
-    public function getTransportLabelTrackAndTrace(): ?string
+    * The track and trace code for this load carrier. 
+*
+    * @return string|null
+    */
+    public function getTransportLabelTrackAndTrace(): ?string 
     {
         return $this->get('transportLabelTrackAndTrace');
     }
@@ -53,17 +59,17 @@ class LoadCarrier extends Resource
      * @param string|null $transportLabelTrackAndTrace
      * @return $this
      */
-    public function setTransportLabelTrackAndTrace(string $transportLabelTrackAndTrace = null): static
+    public function setTransportLabelTrackAndTrace(string $transportLabelTrackAndTrace = null): static 
     {
         return $this->set('transportLabelTrackAndTrace', $transportLabelTrackAndTrace);
     }
 
     /**
-     * The current state of the transport for this load carrier.
-     *
-     * @return string|null
-     */
-    public function getTransportState(): ?string
+    * The current state of the transport for this load carrier. 
+*
+    * @return string|null
+    */
+    public function getTransportState(): ?string 
     {
         return $this->get('transportState');
     }
@@ -72,17 +78,17 @@ class LoadCarrier extends Resource
      * @param string|null $transportState
      * @return $this
      */
-    public function setTransportState(string $transportState = null): static
+    public function setTransportState(string $transportState = null): static 
     {
         return $this->set('transportState', $transportState);
     }
 
     /**
-     * The date and time in ISO 8601 format when the latest update for this transport was received.
-     *
-     * @return string|null
-     */
-    public function getTransportStateUpdateDateTime(): ?string
+    * The date and time in ISO 8601 format when the latest update for this transport was received. 
+*
+    * @return string|null
+    */
+    public function getTransportStateUpdateDateTime(): ?string 
     {
         return $this->get('transportStateUpdateDateTime');
     }
@@ -91,7 +97,7 @@ class LoadCarrier extends Resource
      * @param string|null $transportStateUpdateDateTime
      * @return $this
      */
-    public function setTransportStateUpdateDateTime(string $transportStateUpdateDateTime = null): static
+    public function setTransportStateUpdateDateTime(string $transportStateUpdateDateTime = null): static 
     {
         return $this->set('transportStateUpdateDateTime', $transportStateUpdateDateTime);
     }

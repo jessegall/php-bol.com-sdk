@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class Fulfilment 
+*/
 class Fulfilment extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'Fulfilment';
 
-
+    
     /**
-     * The fulfilment method. Fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB).
-     *
-     * @return string|null
-     */
-    public function getMethod(): ?string
+    * The fulfilment method. Fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB). 
+*
+    * @return string|null
+    */
+    public function getMethod(): ?string 
     {
         return $this->get('method');
     }
@@ -34,17 +40,17 @@ class Fulfilment extends Resource
      * @param string|null $method
      * @return $this
      */
-    public function setMethod(string $method = null): static
+    public function setMethod(string $method = null): static 
     {
         return $this->set('method', $method);
     }
 
     /**
-     * The delivery promise that applies to this offer. This value will only be used in combination with fulfilmentMethod 'FBR'.
-     *
-     * @return string|null
-     */
-    public function getDeliveryCode(): ?string
+    * The delivery promise that applies to this offer. This value will only be used in combination with fulfilmentMethod 'FBR'. 
+*
+    * @return string|null
+    */
+    public function getDeliveryCode(): ?string 
     {
         return $this->get('deliveryCode');
     }
@@ -53,7 +59,7 @@ class Fulfilment extends Resource
      * @param string|null $deliveryCode
      * @return $this
      */
-    public function setDeliveryCode(string $deliveryCode = null): static
+    public function setDeliveryCode(string $deliveryCode = null): static 
     {
         return $this->set('deliveryCode', $deliveryCode);
     }

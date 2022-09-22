@@ -2,32 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
+/**
+* Class Attribute 
+*/
 class Attribute extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'Attribute';
 
-
+    
     /**
-     * The identifier of the attribute for which the value has changed.
-     *
-     * @return string|null
-     */
-    public function getId(): ?string
+    * The identifier of the attribute for which the value has changed. 
+*
+    * @return string|null
+    */
+    public function getId(): ?string 
     {
         return $this->get('id');
     }
@@ -36,24 +40,25 @@ class Attribute extends Resource
      * @param string|null $id
      * @return $this
      */
-    public function setId(string $id = null): static
+    public function setId(string $id = null): static 
     {
         return $this->set('id', $id);
     }
 
     /**
-     * @return ResourceCollection<AttributeValue>|null
-     */
-    public function getValues(): ?ResourceCollection
+    
+    * @return ResourceCollection<AttributeValue>|null
+    */
+    public function getValues(): ?ResourceCollection 
     {
-        return $this->relation('values', ResourceCollection::class, true);
+        return $this->relation('values', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<AttributeValue>|null $values
      * @return $this
      */
-    public function setValues(ResourceCollection $values = null): static
+    public function setValues(ResourceCollection $values = null): static 
     {
         return $this->set('values', $values);
     }

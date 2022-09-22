@@ -2,30 +2,50 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-class ReturnRequest extends Resource
-{
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Request;
 
+/**
+* Class ReturnRequest 
+*/
+class ReturnRequest extends Resource implements Request
+{
     /**
-     * The api endpoint of the resource.
+     * The api endpoint of the request.
      *
      * @var string
      */
-    protected string $endpoint = 'endpoint';
+    protected string $endpoint = '/retailer/returns/{rma-id}';
 
     /**
-     * The lightspeed resource this class represents
+     * The available endpoint methods.
+     *
+     * @var array
+     */
+    protected array $endpointMethods = ['put'];
+
+   /**
+     * The api response of the request.
+     *
+     * @var string|null
+     */
+    protected string|null $response = null;
+
+    /**
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'ReturnRequest';
 
-
+    
     /**
-     * The handling result requested by the retailer.
-     *
-     * @return string|null
-     */
-    public function getHandlingResult(): ?string
+    * The handling result requested by the retailer. 
+*
+    * @return string|null
+    */
+    public function getHandlingResult(): ?string 
     {
         return $this->get('handlingResult');
     }
@@ -34,17 +54,17 @@ class ReturnRequest extends Resource
      * @param string|null $handlingResult
      * @return $this
      */
-    public function setHandlingResult(string $handlingResult = null): static
+    public function setHandlingResult(string $handlingResult = null): static 
     {
         return $this->set('handlingResult', $handlingResult);
     }
 
     /**
-     * The quantity of items returned.
-     *
-     * @return int|null
-     */
-    public function getQuantityReturned(): ?int
+    * The quantity of items returned. 
+*
+    * @return int|null
+    */
+    public function getQuantityReturned(): ?int 
     {
         return $this->get('quantityReturned');
     }
@@ -53,7 +73,7 @@ class ReturnRequest extends Resource
      * @param int|null $quantityReturned
      * @return $this
      */
-    public function setQuantityReturned(int $quantityReturned = null): static
+    public function setQuantityReturned(int $quantityReturned = null): static 
     {
         return $this->set('quantityReturned', $quantityReturned);
     }

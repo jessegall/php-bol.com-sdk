@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class Condition 
+*/
 class Condition extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'Condition';
 
-
+    
     /**
-     * The condition of the offered product.
-     *
-     * @return string|null
-     */
-    public function getName(): ?string
+    * The condition of the offered product. 
+*
+    * @return string|null
+    */
+    public function getName(): ?string 
     {
         return $this->get('name');
     }
@@ -34,17 +40,17 @@ class Condition extends Resource
      * @param string|null $name
      * @return $this
      */
-    public function setName(string $name = null): static
+    public function setName(string $name = null): static 
     {
         return $this->set('name', $name);
     }
 
     /**
-     * The category of the condition. If not given NEW or SECONDHAND is derived from NAME.
-     *
-     * @return string|null
-     */
-    public function getCategory(): ?string
+    * The category of the condition. If not given NEW or SECONDHAND is derived from NAME. 
+*
+    * @return string|null
+    */
+    public function getCategory(): ?string 
     {
         return $this->get('category');
     }
@@ -53,17 +59,17 @@ class Condition extends Resource
      * @param string|null $category
      * @return $this
      */
-    public function setCategory(string $category = null): static
+    public function setCategory(string $category = null): static 
     {
         return $this->set('category', $category);
     }
 
     /**
-     * The description of the condition of the product. Only allowed if name is not NEW and may not contain e-mail addresses.
-     *
-     * @return string|null
-     */
-    public function getComment(): ?string
+    * The description of the condition of the product. Only allowed if name is not NEW and may not contain e-mail addresses. 
+*
+    * @return string|null
+    */
+    public function getComment(): ?string 
     {
         return $this->get('comment');
     }
@@ -72,7 +78,7 @@ class Condition extends Resource
      * @param string|null $comment
      * @return $this
      */
-    public function setComment(string $comment = null): static
+    public function setComment(string $comment = null): static 
     {
         return $this->set('comment', $comment);
     }

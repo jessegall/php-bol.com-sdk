@@ -2,41 +2,45 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
+/**
+* Class Pricing 
+*/
 class Pricing extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'Pricing';
 
-
+    
     /**
-     * A set of prices (containing a quantity and selling price) that apply to this offer.
-     *
-     * @return ResourceCollection<BundlePrice>|null
-     */
-    public function getBundlePrices(): ?ResourceCollection
+    * A set of prices (containing a quantity and selling price) that apply to this offer. 
+*
+    * @return ResourceCollection<BundlePrice>|null
+    */
+    public function getBundlePrices(): ?ResourceCollection 
     {
-        return $this->relation('bundlePrices', ResourceCollection::class, true);
+        return $this->relation('bundlePrices', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<BundlePrice>|null $bundlePrices
      * @return $this
      */
-    public function setBundlePrices(ResourceCollection $bundlePrices = null): static
+    public function setBundlePrices(ResourceCollection $bundlePrices = null): static 
     {
         return $this->set('bundlePrices', $bundlePrices);
     }

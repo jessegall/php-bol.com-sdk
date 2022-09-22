@@ -2,32 +2,50 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Request;
 
-class UpdateReplenishmentRequest extends Resource
+/**
+* Class UpdateReplenishmentRequest 
+*/
+class UpdateReplenishmentRequest extends Resource implements Request
 {
-
     /**
-     * The api endpoint of the resource.
+     * The api endpoint of the request.
      *
      * @var string
      */
-    protected string $endpoint = 'endpoint';
+    protected string $endpoint = '/retailer/replenishments/{replenishment-id}';
 
     /**
-     * The lightspeed resource this class represents
+     * The available endpoint methods.
+     *
+     * @var array
+     */
+    protected array $endpointMethods = ['get' , 'put'];
+
+   /**
+     * The api response of the request.
+     *
+     * @var string|null
+     */
+    protected string|null $response = null;
+
+    /**
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'UpdateReplenishmentRequest';
 
-
+    
     /**
-     * Update the state of the replenishment to cancel the replenishment.
-     *
-     * @return string|null
-     */
-    public function getState(): ?string
+    * Update the state of the replenishment to cancel the replenishment. 
+*
+    * @return string|null
+    */
+    public function getState(): ?string 
     {
         return $this->get('state');
     }
@@ -36,15 +54,16 @@ class UpdateReplenishmentRequest extends Resource
      * @param string|null $state
      * @return $this
      */
-    public function setState(string $state = null): static
+    public function setState(string $state = null): static 
     {
         return $this->set('state', $state);
     }
 
     /**
-     * @return UpdateDeliveryInfo|null
-     */
-    public function getDeliveryInfo(): ?UpdateDeliveryInfo
+    
+    * @return UpdateDeliveryInfo|null
+    */
+    public function getDeliveryInfo(): ?UpdateDeliveryInfo 
     {
         return $this->relation('deliveryInfo', UpdateDeliveryInfo::class);
     }
@@ -53,17 +72,17 @@ class UpdateReplenishmentRequest extends Resource
      * @param UpdateDeliveryInfo|null $deliveryInfo
      * @return $this
      */
-    public function setDeliveryInfo(UpdateDeliveryInfo $deliveryInfo = null): static
+    public function setDeliveryInfo(UpdateDeliveryInfo $deliveryInfo = null): static 
     {
         return $this->set('deliveryInfo', $deliveryInfo);
     }
 
     /**
-     * The number of parcels in this replenishment. Note: if you are using the bol.com pickup service, the maximum number is 20.
-     *
-     * @return int|null
-     */
-    public function getNumberOfLoadCarriers(): ?int
+    * The number of parcels in this replenishment. Note: if you are using the bol.com pickup service, the maximum number is 20. 
+*
+    * @return int|null
+    */
+    public function getNumberOfLoadCarriers(): ?int 
     {
         return $this->get('numberOfLoadCarriers');
     }
@@ -72,24 +91,25 @@ class UpdateReplenishmentRequest extends Resource
      * @param int|null $numberOfLoadCarriers
      * @return $this
      */
-    public function setNumberOfLoadCarriers(int $numberOfLoadCarriers = null): static
+    public function setNumberOfLoadCarriers(int $numberOfLoadCarriers = null): static 
     {
         return $this->set('numberOfLoadCarriers', $numberOfLoadCarriers);
     }
 
     /**
-     * @return ResourceCollection<UpdateLoadCarrier>|null
-     */
-    public function getLoadCarriers(): ?ResourceCollection
+    
+    * @return ResourceCollection<UpdateLoadCarrier>|null
+    */
+    public function getLoadCarriers(): ?ResourceCollection 
     {
-        return $this->relation('loadCarriers', ResourceCollection::class, true);
+        return $this->relation('loadCarriers', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<UpdateLoadCarrier>|null $loadCarriers
      * @return $this
      */
-    public function setLoadCarriers(ResourceCollection $loadCarriers = null): static
+    public function setLoadCarriers(ResourceCollection $loadCarriers = null): static 
     {
         return $this->set('loadCarriers', $loadCarriers);
     }

@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class SearchTermsCountry 
+*/
 class SearchTermsCountry extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'SearchTermsCountry';
 
-
+    
     /**
-     * Countries in which this offer is currently on sale in the webshop in ISO-3166-1 format.
-     *
-     * @return string|null
-     */
-    public function getCountryCode(): ?string
+    * Countries in which this offer is currently on sale in the webshop in ISO-3166-1 format. 
+*
+    * @return string|null
+    */
+    public function getCountryCode(): ?string 
     {
         return $this->get('countryCode');
     }
@@ -34,17 +40,17 @@ class SearchTermsCountry extends Resource
      * @param string|null $countryCode
      * @return $this
      */
-    public function setCountryCode(string $countryCode = null): static
+    public function setCountryCode(string $countryCode = null): static 
     {
         return $this->set('countryCode', $countryCode);
     }
 
     /**
-     * The number of customer visits on the search page.
-     *
-     * @return int|null
-     */
-    public function getValue(): ?int
+    * The number of customer visits on the search page. 
+*
+    * @return int|null
+    */
+    public function getValue(): ?int 
     {
         return $this->get('value');
     }
@@ -53,7 +59,7 @@ class SearchTermsCountry extends Resource
      * @param int|null $value
      * @return $this
      */
-    public function setValue(int $value = null): static
+    public function setValue(int $value = null): static 
     {
         return $this->set('value', $value);
     }

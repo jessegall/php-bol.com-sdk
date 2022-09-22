@@ -2,32 +2,50 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Request;
 
-class CreateReplenishmentRequest extends Resource
+/**
+* Class CreateReplenishmentRequest 
+*/
+class CreateReplenishmentRequest extends Resource implements Request
 {
-
     /**
-     * The api endpoint of the resource.
+     * The api endpoint of the request.
      *
      * @var string
      */
-    protected string $endpoint = 'endpoint';
+    protected string $endpoint = '/retailer/replenishments';
 
     /**
-     * The lightspeed resource this class represents
+     * The available endpoint methods.
+     *
+     * @var array
+     */
+    protected array $endpointMethods = ['get' , 'post'];
+
+   /**
+     * The api response of the request.
+     *
+     * @var string|null
+     */
+    protected string|null $response = null;
+
+    /**
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'CreateReplenishmentRequest';
 
-
+    
     /**
-     * Custom user reference for this replenishment. Must contain at least 1 digit and only upper case characters allowed.
-     *
-     * @return string|null
-     */
-    public function getReference(): ?string
+    * Custom user reference for this replenishment. Must contain at least 1 digit and only upper case characters allowed. 
+*
+    * @return string|null
+    */
+    public function getReference(): ?string 
     {
         return $this->get('reference');
     }
@@ -36,15 +54,16 @@ class CreateReplenishmentRequest extends Resource
      * @param string|null $reference
      * @return $this
      */
-    public function setReference(string $reference = null): static
+    public function setReference(string $reference = null): static 
     {
         return $this->set('reference', $reference);
     }
 
     /**
-     * @return CreateDeliveryInfo|null
-     */
-    public function getDeliveryInfo(): ?CreateDeliveryInfo
+    
+    * @return CreateDeliveryInfo|null
+    */
+    public function getDeliveryInfo(): ?CreateDeliveryInfo 
     {
         return $this->relation('deliveryInfo', CreateDeliveryInfo::class);
     }
@@ -53,17 +72,17 @@ class CreateReplenishmentRequest extends Resource
      * @param CreateDeliveryInfo|null $deliveryInfo
      * @return $this
      */
-    public function setDeliveryInfo(CreateDeliveryInfo $deliveryInfo = null): static
+    public function setDeliveryInfo(CreateDeliveryInfo $deliveryInfo = null): static 
     {
         return $this->set('deliveryInfo', $deliveryInfo);
     }
 
     /**
-     * Indicates whether the replenishment will be labeled by bol.com.
-     *
-     * @return bool|null
-     */
-    public function getLabelingByBol(): ?bool
+    * Indicates whether the replenishment will be labeled by bol.com. 
+*
+    * @return bool|null
+    */
+    public function getLabelingByBol(): ?bool 
     {
         return $this->get('labelingByBol');
     }
@@ -72,17 +91,17 @@ class CreateReplenishmentRequest extends Resource
      * @param bool|null $labelingByBol
      * @return $this
      */
-    public function setLabelingByBol(bool $labelingByBol): static
+    public function setLabelingByBol(bool $labelingByBol): static 
     {
         return $this->set('labelingByBol', $labelingByBol);
     }
 
     /**
-     * The number of parcels in this replenishment. Note: if you are using the bol.com pickup service, the maximum number is 20.
-     *
-     * @return int|null
-     */
-    public function getNumberOfLoadCarriers(): ?int
+    * The number of parcels in this replenishment. Note: if you are using the bol.com pickup service, the maximum number is 20. 
+*
+    * @return int|null
+    */
+    public function getNumberOfLoadCarriers(): ?int 
     {
         return $this->get('numberOfLoadCarriers');
     }
@@ -91,15 +110,16 @@ class CreateReplenishmentRequest extends Resource
      * @param int|null $numberOfLoadCarriers
      * @return $this
      */
-    public function setNumberOfLoadCarriers(int $numberOfLoadCarriers = null): static
+    public function setNumberOfLoadCarriers(int $numberOfLoadCarriers = null): static 
     {
         return $this->set('numberOfLoadCarriers', $numberOfLoadCarriers);
     }
 
     /**
-     * @return CreatePickupAppointment|null
-     */
-    public function getPickupAppointment(): ?CreatePickupAppointment
+    
+    * @return CreatePickupAppointment|null
+    */
+    public function getPickupAppointment(): ?CreatePickupAppointment 
     {
         return $this->relation('pickupAppointment', CreatePickupAppointment::class);
     }
@@ -108,24 +128,25 @@ class CreateReplenishmentRequest extends Resource
      * @param CreatePickupAppointment|null $pickupAppointment
      * @return $this
      */
-    public function setPickupAppointment(CreatePickupAppointment $pickupAppointment = null): static
+    public function setPickupAppointment(CreatePickupAppointment $pickupAppointment = null): static 
     {
         return $this->set('pickupAppointment', $pickupAppointment);
     }
 
     /**
-     * @return ResourceCollection<CreateReplenishmentLine>|null
-     */
-    public function getLines(): ?ResourceCollection
+    
+    * @return ResourceCollection<CreateReplenishmentLine>|null
+    */
+    public function getLines(): ?ResourceCollection 
     {
-        return $this->relation('lines', ResourceCollection::class, true);
+        return $this->relation('lines', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<CreateReplenishmentLine>|null $lines
      * @return $this
      */
-    public function setLines(ResourceCollection $lines = null): static
+    public function setLines(ResourceCollection $lines = null): static 
     {
         return $this->set('lines', $lines);
     }

@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class CreateDeliveryInfo 
+*/
 class CreateDeliveryInfo extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'CreateDeliveryInfo';
 
-
+    
     /**
-     * The expected delivery date of the shipment at the bol.com warehouse. In ISO 8601 format.
-     *
-     * @return string|null
-     */
-    public function getExpectedDeliveryDate(): ?string
+    * The expected delivery date of the shipment at the bol.com warehouse. In ISO 8601 format. 
+*
+    * @return string|null
+    */
+    public function getExpectedDeliveryDate(): ?string 
     {
         return $this->get('expectedDeliveryDate');
     }
@@ -34,17 +40,17 @@ class CreateDeliveryInfo extends Resource
      * @param string|null $expectedDeliveryDate
      * @return $this
      */
-    public function setExpectedDeliveryDate(string $expectedDeliveryDate = null): static
+    public function setExpectedDeliveryDate(string $expectedDeliveryDate = null): static 
     {
         return $this->set('expectedDeliveryDate', $expectedDeliveryDate);
     }
 
     /**
-     * The transporter code that correlates to the transport used for this replenishment.
-     *
-     * @return string|null
-     */
-    public function getTransporterCode(): ?string
+    * The transporter code that correlates to the transport used for this replenishment. 
+*
+    * @return string|null
+    */
+    public function getTransporterCode(): ?string 
     {
         return $this->get('transporterCode');
     }
@@ -53,7 +59,7 @@ class CreateDeliveryInfo extends Resource
      * @param string|null $transporterCode
      * @return $this
      */
-    public function setTransporterCode(string $transporterCode = null): static
+    public function setTransporterCode(string $transporterCode = null): static 
     {
         return $this->set('transporterCode', $transporterCode);
     }

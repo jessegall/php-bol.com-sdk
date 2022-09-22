@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class PackageRestrictions 
+*/
 class PackageRestrictions extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'PackageRestrictions';
 
-
+    
     /**
-     * The weight of a package.
-     *
-     * @return string|null
-     */
-    public function getMaxWeight(): ?string
+    * The weight of a package. 
+*
+    * @return string|null
+    */
+    public function getMaxWeight(): ?string 
     {
         return $this->get('maxWeight');
     }
@@ -34,17 +40,17 @@ class PackageRestrictions extends Resource
      * @param string|null $maxWeight
      * @return $this
      */
-    public function setMaxWeight(string $maxWeight = null): static
+    public function setMaxWeight(string $maxWeight = null): static 
     {
         return $this->set('maxWeight', $maxWeight);
     }
 
     /**
-     * The dimensions of a package.
-     *
-     * @return string|null
-     */
-    public function getMaxDimensions(): ?string
+    * The dimensions of a package. 
+*
+    * @return string|null
+    */
+    public function getMaxDimensions(): ?string 
     {
         return $this->get('maxDimensions');
     }
@@ -53,7 +59,7 @@ class PackageRestrictions extends Resource
      * @param string|null $maxDimensions
      * @return $this
      */
-    public function setMaxDimensions(string $maxDimensions = null): static
+    public function setMaxDimensions(string $maxDimensions = null): static 
     {
         return $this->set('maxDimensions', $maxDimensions);
     }

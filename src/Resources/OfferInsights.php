@@ -2,39 +2,45 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
+/**
+* Class OfferInsights 
+* Offer insights.
+*/
 class OfferInsights extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = '/retailer/insights/offer';
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'OfferInsights';
 
-
+    
     /**
-     * @return ResourceCollection<OfferInsight>|null
-     */
-    public function getOfferInsights(): ?ResourceCollection
+    
+    * @return ResourceCollection<OfferInsight>|null
+    */
+    public function getOfferInsights(): ?ResourceCollection 
     {
-        return $this->relation('offerInsights', ResourceCollection::class, true);
+        return $this->relation('offerInsights', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<OfferInsight>|null $offerInsights
      * @return $this
      */
-    public function setOfferInsights(ResourceCollection $offerInsights = null): static
+    public function setOfferInsights(ResourceCollection $offerInsights = null): static 
     {
         return $this->set('offerInsights', $offerInsights);
     }

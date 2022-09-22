@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class Link 
+*/
 class Link extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'Link';
 
-
+    
     /**
-     * The link relation.
-     *
-     * @return string|null
-     */
-    public function getRel(): ?string
+    * The link relation. 
+*
+    * @return string|null
+    */
+    public function getRel(): ?string 
     {
         return $this->get('rel');
     }
@@ -34,17 +40,17 @@ class Link extends Resource
      * @param string|null $rel
      * @return $this
      */
-    public function setRel(string $rel = null): static
+    public function setRel(string $rel = null): static 
     {
         return $this->set('rel', $rel);
     }
 
     /**
-     * The URI for the resource linked to.
-     *
-     * @return string|null
-     */
-    public function getHref(): ?string
+    * The URI for the resource linked to. 
+*
+    * @return string|null
+    */
+    public function getHref(): ?string 
     {
         return $this->get('href');
     }
@@ -53,17 +59,17 @@ class Link extends Resource
      * @param string|null $href
      * @return $this
      */
-    public function setHref(string $href = null): static
+    public function setHref(string $href = null): static 
     {
         return $this->set('href', $href);
     }
 
     /**
-     * The HTTP method to use when accessing the link.
-     *
-     * @return string|null
-     */
-    public function getMethod(): ?string
+    * The HTTP method to use when accessing the link. 
+*
+    * @return string|null
+    */
+    public function getMethod(): ?string 
     {
         return $this->get('method');
     }
@@ -72,7 +78,7 @@ class Link extends Resource
      * @param string|null $method
      * @return $this
      */
-    public function setMethod(string $method = null): static
+    public function setMethod(string $method = null): static 
     {
         return $this->set('method', $method);
     }

@@ -2,30 +2,50 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
-class UpdateSubscriptionRequest extends Resource
-{
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Request;
 
+/**
+* Class UpdateSubscriptionRequest 
+*/
+class UpdateSubscriptionRequest extends Resource implements Request
+{
     /**
-     * The api endpoint of the resource.
+     * The api endpoint of the request.
      *
      * @var string
      */
-    protected string $endpoint = 'endpoint';
+    protected string $endpoint = '/retailer/subscriptions/{subscription-id}';
 
     /**
-     * The lightspeed resource this class represents
+     * The available endpoint methods.
+     *
+     * @var array
+     */
+    protected array $endpointMethods = ['get' , 'put' , 'delete'];
+
+   /**
+     * The api response of the request.
+     *
+     * @var string|null
+     */
+    protected string|null $response = null;
+
+    /**
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'UpdateSubscriptionRequest';
 
-
+    
     /**
-     * Type of event.
-     *
-     * @return array|null
-     */
-    public function getResources(): ?array
+    * Type of event. 
+*
+    * @return array|null
+    */
+    public function getResources(): ?array 
     {
         return $this->get('resources');
     }
@@ -34,17 +54,17 @@ class UpdateSubscriptionRequest extends Resource
      * @param array|null $resources
      * @return $this
      */
-    public function setResources(array $resources = null): static
+    public function setResources(array $resources = null): static 
     {
         return $this->set('resources', $resources);
     }
 
     /**
-     * URL to receive this WebHook notification.
-     *
-     * @return string|null
-     */
-    public function getUrl(): ?string
+    * URL to receive this WebHook notification. 
+*
+    * @return string|null
+    */
+    public function getUrl(): ?string 
     {
         return $this->get('url');
     }
@@ -53,7 +73,7 @@ class UpdateSubscriptionRequest extends Resource
      * @param string|null $url
      * @return $this
      */
-    public function setUrl(string $url = null): static
+    public function setUrl(string $url = null): static 
     {
         return $this->set('url', $url);
     }

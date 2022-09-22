@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class StockCreate 
+*/
 class StockCreate extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'StockCreate';
 
-
+    
     /**
-     * The amount of stock available for the specified product present in the retailers warehouse. Note: this should not be the FBB stock! Defaults to 0.
-     *
-     * @return int|null
-     */
-    public function getAmount(): ?int
+    * The amount of stock available for the specified product present in the retailers warehouse. Note: this should not be the FBB stock! Defaults to 0. 
+*
+    * @return int|null
+    */
+    public function getAmount(): ?int 
     {
         return $this->get('amount');
     }
@@ -34,17 +40,17 @@ class StockCreate extends Resource
      * @param int|null $amount
      * @return $this
      */
-    public function setAmount(int $amount = null): static
+    public function setAmount(int $amount = null): static 
     {
         return $this->set('amount', $amount);
     }
 
     /**
-     * Configures whether the retailer manages the stock levels or that bol.com should calculate the corrected stock based on actual open orders. In case the configuration is set to 'false', all open orders are used to calculate the corrected stock. In case the configuration is set to 'true', only orders that are placed after the last offer update are taken into account.
-     *
-     * @return bool|null
-     */
-    public function getManagedByRetailer(): ?bool
+    * Configures whether the retailer manages the stock levels or that bol.com should calculate the corrected stock based on actual open orders. In case the configuration is set to 'false', all open orders are used to calculate the corrected stock. In case the configuration is set to 'true', only orders that are placed after the last offer update are taken into account. 
+*
+    * @return bool|null
+    */
+    public function getManagedByRetailer(): ?bool 
     {
         return $this->get('managedByRetailer');
     }
@@ -53,7 +59,7 @@ class StockCreate extends Resource
      * @param bool|null $managedByRetailer
      * @return $this
      */
-    public function setManagedByRetailer(bool $managedByRetailer): static
+    public function setManagedByRetailer(bool $managedByRetailer): static 
     {
         return $this->set('managedByRetailer', $managedByRetailer);
     }

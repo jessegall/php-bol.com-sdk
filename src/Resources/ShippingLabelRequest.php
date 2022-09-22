@@ -2,51 +2,70 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Request;
 
-class ShippingLabelRequest extends Resource
+/**
+* Class ShippingLabelRequest 
+* The configuration of order items to get delivery options for.
+*/
+class ShippingLabelRequest extends Resource implements Request
 {
-
     /**
-     * The api endpoint of the resource.
+     * The api endpoint of the request.
      *
      * @var string
      */
-    protected string $endpoint = 'endpoint';
+    protected string $endpoint = '/retailer/shipping-labels';
 
     /**
-     * The lightspeed resource this class represents
+     * The available endpoint methods.
+     *
+     * @var array
+     */
+    protected array $endpointMethods = ['post'];
+
+   /**
+     * The api response of the request.
+     *
+     * @var string|null
+     */
+    protected string|null $response = null;
+
+    /**
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'ShippingLabelRequest';
 
-
+    
     /**
-     * Order items for which the delivery options are requested.
-     *
-     * @return ResourceCollection<OrderItem>|null
-     */
-    public function getOrderItems(): ?ResourceCollection
+    * Order items for which the delivery options are requested. 
+*
+    * @return ResourceCollection<OrderItem>|null
+    */
+    public function getOrderItems(): ?ResourceCollection 
     {
-        return $this->relation('orderItems', ResourceCollection::class, true);
+        return $this->relation('orderItems', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<OrderItem>|null $orderItems
      * @return $this
      */
-    public function setOrderItems(ResourceCollection $orderItems = null): static
+    public function setOrderItems(ResourceCollection $orderItems = null): static 
     {
         return $this->set('orderItems', $orderItems);
     }
 
     /**
-     * Shipping label offer id for which you request a shipping label.
-     *
-     * @return string|null
-     */
-    public function getShippingLabelOfferId(): ?string
+    * Shipping label offer id for which you request a shipping label. 
+*
+    * @return string|null
+    */
+    public function getShippingLabelOfferId(): ?string 
     {
         return $this->get('shippingLabelOfferId');
     }
@@ -55,7 +74,7 @@ class ShippingLabelRequest extends Resource
      * @param string|null $shippingLabelOfferId
      * @return $this
      */
-    public function setShippingLabelOfferId(string $shippingLabelOfferId = null): static
+    public function setShippingLabelOfferId(string $shippingLabelOfferId = null): static 
     {
         return $this->set('shippingLabelOfferId', $shippingLabelOfferId);
     }

@@ -2,39 +2,38 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Response;
 
-class ReplenishmentsResponse extends Resource
+/**
+* Class ReplenishmentsResponse 
+*/
+class ReplenishmentsResponse extends Resource implements Response
 {
 
     /**
-     * The api endpoint of the resource.
-     *
-     * @var string
-     */
-    protected string $endpoint = 'endpoint';
-
-    /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'ReplenishmentsResponse';
 
-
+    
     /**
-     * @return ResourceCollection<ReducedReplenishment>|null
-     */
-    public function getReplenishments(): ?ResourceCollection
+    
+    * @return ResourceCollection<ReducedReplenishment>|null
+    */
+    public function getReplenishments(): ?ResourceCollection 
     {
-        return $this->relation('replenishments', ResourceCollection::class, true);
+        return $this->relation('replenishments', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<ReducedReplenishment>|null $replenishments
      * @return $this
      */
-    public function setReplenishments(ResourceCollection $replenishments = null): static
+    public function setReplenishments(ResourceCollection $replenishments = null): static 
     {
         return $this->set('replenishments', $replenishments);
     }

@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class AdditionalService 
+*/
 class AdditionalService extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'AdditionalService';
 
-
+    
     /**
-     * An additional service type that the customer selected when purchasing this order item.
-     *
-     * @return string|null
-     */
-    public function getServiceType(): ?string
+    * An additional service type that the customer selected when purchasing this order item. 
+*
+    * @return string|null
+    */
+    public function getServiceType(): ?string 
     {
         return $this->get('serviceType');
     }
@@ -34,7 +40,7 @@ class AdditionalService extends Resource
      * @param string|null $serviceType
      * @return $this
      */
-    public function setServiceType(string $serviceType = null): static
+    public function setServiceType(string $serviceType = null): static 
     {
         return $this->set('serviceType', $serviceType);
     }

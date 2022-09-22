@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class ReducedReplenishmentLines 
+*/
 class ReducedReplenishmentLines extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'ReducedReplenishmentLines';
 
-
+    
     /**
-     * The EAN number associated with this product.
-     *
-     * @return string|null
-     */
-    public function getEan(): ?string
+    * The EAN number associated with this product. 
+*
+    * @return string|null
+    */
+    public function getEan(): ?string 
     {
         return $this->get('ean');
     }
@@ -34,7 +40,7 @@ class ReducedReplenishmentLines extends Resource
      * @param string|null $ean
      * @return $this
      */
-    public function setEan(string $ean = null): static
+    public function setEan(string $ean = null): static 
     {
         return $this->set('ean', $ean);
     }

@@ -2,39 +2,38 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Response;
 
-class SubscriptionsResponse extends Resource
+/**
+* Class SubscriptionsResponse 
+*/
+class SubscriptionsResponse extends Resource implements Response
 {
 
     /**
-     * The api endpoint of the resource.
-     *
-     * @var string
-     */
-    protected string $endpoint = 'endpoint';
-
-    /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'SubscriptionsResponse';
 
-
+    
     /**
-     * @return ResourceCollection<SubscriptionResponse>|null
-     */
-    public function getSubscriptions(): ?ResourceCollection
+    
+    * @return ResourceCollection<SubscriptionResponse>|null
+    */
+    public function getSubscriptions(): ?ResourceCollection 
     {
-        return $this->relation('subscriptions', ResourceCollection::class, true);
+        return $this->relation('subscriptions', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<SubscriptionResponse>|null $subscriptions
      * @return $this
      */
-    public function setSubscriptions(ResourceCollection $subscriptions = null): static
+    public function setSubscriptions(ResourceCollection $subscriptions = null): static 
     {
         return $this->set('subscriptions', $subscriptions);
     }

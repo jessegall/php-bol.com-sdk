@@ -4,19 +4,13 @@ namespace JesseGall\BolComSDK\Resources;
 
 use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Response;
 
 /**
 * Class {{ class }} {{ description }}
 */
-class {{ class }} extends Resource
+class {{ class }} extends Resource implements Response
 {
-
-    /**
-     * The api endpoint of the resource.
-     *
-     * @var string|null
-     */
-    protected string|null $endpoint = {{ endpoint }};
 
     /**
      * The bol.com resource this class represents

@@ -2,39 +2,38 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Response;
 
-class InventoryResponse extends Resource
+/**
+* Class InventoryResponse 
+*/
+class InventoryResponse extends Resource implements Response
 {
 
     /**
-     * The api endpoint of the resource.
-     *
-     * @var string
-     */
-    protected string $endpoint = 'endpoint';
-
-    /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'InventoryResponse';
 
-
+    
     /**
-     * @return ResourceCollection<Inventory>|null
-     */
-    public function getInventory(): ?ResourceCollection
+    
+    * @return ResourceCollection<Inventory>|null
+    */
+    public function getInventory(): ?ResourceCollection 
     {
-        return $this->relation('inventory', ResourceCollection::class, true);
+        return $this->relation('inventory', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<Inventory>|null $inventory
      * @return $this
      */
-    public function setInventory(ResourceCollection $inventory = null): static
+    public function setInventory(ResourceCollection $inventory = null): static 
     {
         return $this->set('inventory', $inventory);
     }

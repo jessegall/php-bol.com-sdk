@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class NotPublishableReason 
+*/
 class NotPublishableReason extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'NotPublishableReason';
 
-
+    
     /**
-     * Error code signalling that the offer is invalid.
-     *
-     * @return string|null
-     */
-    public function getCode(): ?string
+    * Error code signalling that the offer is invalid. 
+*
+    * @return string|null
+    */
+    public function getCode(): ?string 
     {
         return $this->get('code');
     }
@@ -34,17 +40,17 @@ class NotPublishableReason extends Resource
      * @param string|null $code
      * @return $this
      */
-    public function setCode(string $code = null): static
+    public function setCode(string $code = null): static 
     {
         return $this->set('code', $code);
     }
 
     /**
-     * Error message describing the reason the offer is invalid.
-     *
-     * @return string|null
-     */
-    public function getDescription(): ?string
+    * Error message describing the reason the offer is invalid. 
+*
+    * @return string|null
+    */
+    public function getDescription(): ?string 
     {
         return $this->get('description');
     }
@@ -53,7 +59,7 @@ class NotPublishableReason extends Resource
      * @param string|null $description
      * @return $this
      */
-    public function setDescription(string $description = null): static
+    public function setDescription(string $description = null): static 
     {
         return $this->set('description', $description);
     }

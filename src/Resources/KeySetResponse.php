@@ -2,39 +2,38 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Response;
 
-class KeySetResponse extends Resource
+/**
+* Class KeySetResponse 
+*/
+class KeySetResponse extends Resource implements Response
 {
 
     /**
-     * The api endpoint of the resource.
-     *
-     * @var string
-     */
-    protected string $endpoint = 'endpoint';
-
-    /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'KeySetResponse';
 
-
+    
     /**
-     * @return ResourceCollection<KeySet>|null
-     */
-    public function getSignatureKeys(): ?ResourceCollection
+    
+    * @return ResourceCollection<KeySet>|null
+    */
+    public function getSignatureKeys(): ?ResourceCollection 
     {
-        return $this->relation('signatureKeys', ResourceCollection::class, true);
+        return $this->relation('signatureKeys', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<KeySet>|null $signatureKeys
      * @return $this
      */
-    public function setSignatureKeys(ResourceCollection $signatureKeys = null): static
+    public function setSignatureKeys(ResourceCollection $signatureKeys = null): static 
     {
         return $this->set('signatureKeys', $signatureKeys);
     }

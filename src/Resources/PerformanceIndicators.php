@@ -2,39 +2,44 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
 
+/**
+* Class PerformanceIndicators 
+*/
 class PerformanceIndicators extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = '/retailer/insights/performance/indicator';
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'PerformanceIndicators';
 
-
+    
     /**
-     * @return ResourceCollection<PerformanceIndicator>|null
-     */
-    public function getPerformanceIndicators(): ?ResourceCollection
+    
+    * @return ResourceCollection<PerformanceIndicator>|null
+    */
+    public function getPerformanceIndicators(): ?ResourceCollection 
     {
-        return $this->relation('performanceIndicators', ResourceCollection::class, true);
+        return $this->relation('performanceIndicators', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<PerformanceIndicator>|null $performanceIndicators
      * @return $this
      */
-    public function setPerformanceIndicators(ResourceCollection $performanceIndicators = null): static
+    public function setPerformanceIndicators(ResourceCollection $performanceIndicators = null): static 
     {
         return $this->set('performanceIndicators', $performanceIndicators);
     }

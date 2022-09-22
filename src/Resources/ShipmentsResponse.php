@@ -2,39 +2,38 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Response;
 
-class ShipmentsResponse extends Resource
+/**
+* Class ShipmentsResponse 
+*/
+class ShipmentsResponse extends Resource implements Response
 {
 
     /**
-     * The api endpoint of the resource.
-     *
-     * @var string
-     */
-    protected string $endpoint = 'endpoint';
-
-    /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'ShipmentsResponse';
 
-
+    
     /**
-     * @return ResourceCollection<ReducedShipment>|null
-     */
-    public function getShipments(): ?ResourceCollection
+    
+    * @return ResourceCollection<ReducedShipment>|null
+    */
+    public function getShipments(): ?ResourceCollection 
     {
-        return $this->relation('shipments', ResourceCollection::class, true);
+        return $this->relation('shipments', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<ReducedShipment>|null $shipments
      * @return $this
      */
-    public function setShipments(ResourceCollection $shipments = null): static
+    public function setShipments(ResourceCollection $shipments = null): static 
     {
         return $this->set('shipments', $shipments);
     }

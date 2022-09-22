@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class UploadReportAsset 
+*/
 class UploadReportAsset extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'UploadReportAsset';
 
-
+    
     /**
-     * The URL of the asset.
-     *
-     * @return string|null
-     */
-    public function getUrl(): ?string
+    * The URL of the asset. 
+*
+    * @return string|null
+    */
+    public function getUrl(): ?string 
     {
         return $this->get('url');
     }
@@ -34,17 +40,17 @@ class UploadReportAsset extends Resource
      * @param string|null $url
      * @return $this
      */
-    public function setUrl(string $url = null): static
+    public function setUrl(string $url = null): static 
     {
         return $this->set('url', $url);
     }
 
     /**
-     * The label(s) of the asset.
-     *
-     * @return array|null
-     */
-    public function getLabels(): ?array
+    * The label(s) of the asset. 
+*
+    * @return array|null
+    */
+    public function getLabels(): ?array 
     {
         return $this->get('labels');
     }
@@ -53,17 +59,17 @@ class UploadReportAsset extends Resource
      * @param array|null $labels
      * @return $this
      */
-    public function setLabels(array $labels = null): static
+    public function setLabels(array $labels = null): static 
     {
         return $this->set('labels', $labels);
     }
 
     /**
-     * The processing state of the submitted asset.
-     *
-     * @return string|null
-     */
-    public function getStatus(): ?string
+    * The processing state of the submitted asset. 
+*
+    * @return string|null
+    */
+    public function getStatus(): ?string 
     {
         return $this->get('status');
     }
@@ -72,17 +78,17 @@ class UploadReportAsset extends Resource
      * @param string|null $status
      * @return $this
      */
-    public function setStatus(string $status = null): static
+    public function setStatus(string $status = null): static 
     {
         return $this->set('status', $status);
     }
 
     /**
-     * The reason code explaining why the value was rejected.
-     *
-     * @return string|null
-     */
-    public function getSubStatus(): ?string
+    * The reason code explaining why the value was rejected. 
+*
+    * @return string|null
+    */
+    public function getSubStatus(): ?string 
     {
         return $this->get('subStatus');
     }
@@ -91,17 +97,17 @@ class UploadReportAsset extends Resource
      * @param string|null $subStatus
      * @return $this
      */
-    public function setSubStatus(string $subStatus = null): static
+    public function setSubStatus(string $subStatus = null): static 
     {
         return $this->set('subStatus', $subStatus);
     }
 
     /**
-     * The reason explaining why the value was rejected.
-     *
-     * @return string|null
-     */
-    public function getSubStatusDescription(): ?string
+    * The reason explaining why the value was rejected. 
+*
+    * @return string|null
+    */
+    public function getSubStatusDescription(): ?string 
     {
         return $this->get('subStatusDescription');
     }
@@ -110,7 +116,7 @@ class UploadReportAsset extends Resource
      * @param string|null $subStatusDescription
      * @return $this
      */
-    public function setSubStatusDescription(string $subStatusDescription = null): static
+    public function setSubStatusDescription(string $subStatusDescription = null): static 
     {
         return $this->set('subStatusDescription', $subStatusDescription);
     }

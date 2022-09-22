@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class PickupAppointment 
+*/
 class PickupAppointment extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'PickupAppointment';
 
-
+    
     /**
-     * A comment to the transporter regarding the pickup appointment.
-     *
-     * @return string|null
-     */
-    public function getCommentToTransporter(): ?string
+    * A comment to the transporter regarding the pickup appointment. 
+*
+    * @return string|null
+    */
+    public function getCommentToTransporter(): ?string 
     {
         return $this->get('commentToTransporter');
     }
@@ -34,15 +40,16 @@ class PickupAppointment extends Resource
      * @param string|null $commentToTransporter
      * @return $this
      */
-    public function setCommentToTransporter(string $commentToTransporter = null): static
+    public function setCommentToTransporter(string $commentToTransporter = null): static 
     {
         return $this->set('commentToTransporter', $commentToTransporter);
     }
 
     /**
-     * @return Address|null
-     */
-    public function getAddress(): ?Address
+    
+    * @return Address|null
+    */
+    public function getAddress(): ?Address 
     {
         return $this->relation('address', Address::class);
     }
@@ -51,15 +58,16 @@ class PickupAppointment extends Resource
      * @param Address|null $address
      * @return $this
      */
-    public function setAddress(Address $address = null): static
+    public function setAddress(Address $address = null): static 
     {
         return $this->set('address', $address);
     }
 
     /**
-     * @return ReplenishmentPickupTimeSlot|null
-     */
-    public function getPickupTimeSlot(): ?ReplenishmentPickupTimeSlot
+    
+    * @return ReplenishmentPickupTimeSlot|null
+    */
+    public function getPickupTimeSlot(): ?ReplenishmentPickupTimeSlot 
     {
         return $this->relation('pickupTimeSlot', ReplenishmentPickupTimeSlot::class);
     }
@@ -68,17 +76,17 @@ class PickupAppointment extends Resource
      * @param ReplenishmentPickupTimeSlot|null $pickupTimeSlot
      * @return $this
      */
-    public function setPickupTimeSlot(ReplenishmentPickupTimeSlot $pickupTimeSlot = null): static
+    public function setPickupTimeSlot(ReplenishmentPickupTimeSlot $pickupTimeSlot = null): static 
     {
         return $this->set('pickupTimeSlot', $pickupTimeSlot);
     }
 
     /**
-     * The date and time in ISO 8601 format when this replenishment was picked up by the transporter.
-     *
-     * @return string|null
-     */
-    public function getPickupDateTime(): ?string
+    * The date and time in ISO 8601 format when this replenishment was picked up by the transporter. 
+*
+    * @return string|null
+    */
+    public function getPickupDateTime(): ?string 
     {
         return $this->get('pickupDateTime');
     }
@@ -87,17 +95,17 @@ class PickupAppointment extends Resource
      * @param string|null $pickupDateTime
      * @return $this
      */
-    public function setPickupDateTime(string $pickupDateTime = null): static
+    public function setPickupDateTime(string $pickupDateTime = null): static 
     {
         return $this->set('pickupDateTime', $pickupDateTime);
     }
 
     /**
-     * In case of a pickup cancellation this field indicates the reason for cancelling this pickup.
-     *
-     * @return string|null
-     */
-    public function getCancellationReason(): ?string
+    * In case of a pickup cancellation this field indicates the reason for cancelling this pickup. 
+*
+    * @return string|null
+    */
+    public function getCancellationReason(): ?string 
     {
         return $this->get('cancellationReason');
     }
@@ -106,7 +114,7 @@ class PickupAppointment extends Resource
      * @param string|null $cancellationReason
      * @return $this
      */
-    public function setCancellationReason(string $cancellationReason = null): static
+    public function setCancellationReason(string $cancellationReason = null): static 
     {
         return $this->set('cancellationReason', $cancellationReason);
     }

@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class LabelPrice 
+*/
 class LabelPrice extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'LabelPrice';
 
-
+    
     /**
-     * The price that is charged for this delivery option, excluding VAT.
-     *
-     * @return float|null
-     */
-    public function getTotalPrice(): ?float
+    * The price that is charged for this delivery option, excluding VAT. 
+*
+    * @return float|null
+    */
+    public function getTotalPrice(): ?float 
     {
         return $this->get('totalPrice');
     }
@@ -34,7 +40,7 @@ class LabelPrice extends Resource
      * @param float|null $totalPrice
      * @return $this
      */
-    public function setTotalPrice(float $totalPrice = null): static
+    public function setTotalPrice(float $totalPrice = null): static 
     {
         return $this->set('totalPrice', $totalPrice);
     }

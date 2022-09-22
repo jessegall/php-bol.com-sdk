@@ -2,51 +2,69 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
 use JesseGall\Resources\ResourceCollection;
+use JesseGall\BolComSDK\Resources\Contracts\Request;
 
-class ShipmentRequest extends Resource
+/**
+* Class ShipmentRequest 
+*/
+class ShipmentRequest extends Resource implements Request
 {
-
     /**
-     * The api endpoint of the resource.
+     * The api endpoint of the request.
      *
      * @var string
      */
-    protected string $endpoint = 'endpoint';
+    protected string $endpoint = '/retailer/orders/shipment';
 
     /**
-     * The lightspeed resource this class represents
+     * The available endpoint methods.
+     *
+     * @var array
+     */
+    protected array $endpointMethods = ['put'];
+
+   /**
+     * The api response of the request.
+     *
+     * @var string|null
+     */
+    protected string|null $response = null;
+
+    /**
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'ShipmentRequest';
 
-
+    
     /**
-     * Single element list with the order item to ship.
-     *
-     * @return ResourceCollection<OrderItem>|null
-     */
-    public function getOrderItems(): ?ResourceCollection
+    * Single element list with the order item to ship. 
+*
+    * @return ResourceCollection<OrderItem>|null
+    */
+    public function getOrderItems(): ?ResourceCollection 
     {
-        return $this->relation('orderItems', ResourceCollection::class, true);
+        return $this->relation('orderItems', ResourceCollection::class,true);
     }
 
     /**
      * @param ResourceCollection<OrderItem>|null $orderItems
      * @return $this
      */
-    public function setOrderItems(ResourceCollection $orderItems = null): static
+    public function setOrderItems(ResourceCollection $orderItems = null): static 
     {
         return $this->set('orderItems', $orderItems);
     }
 
     /**
-     * A user-defined reference that you can provide to add to the shipment. Can be used for own administration purposes. Only 'null' or non-empty strings accepted.
-     *
-     * @return string|null
-     */
-    public function getShipmentReference(): ?string
+    * A user-defined reference that you can provide to add to the shipment. Can be used for own administration purposes. Only 'null' or non-empty strings accepted. 
+*
+    * @return string|null
+    */
+    public function getShipmentReference(): ?string 
     {
         return $this->get('shipmentReference');
     }
@@ -55,17 +73,17 @@ class ShipmentRequest extends Resource
      * @param string|null $shipmentReference
      * @return $this
      */
-    public function setShipmentReference(string $shipmentReference = null): static
+    public function setShipmentReference(string $shipmentReference = null): static 
     {
         return $this->set('shipmentReference', $shipmentReference);
     }
 
     /**
-     * The identifier of the purchased shipping label.
-     *
-     * @return string|null
-     */
-    public function getShippingLabelId(): ?string
+    * The identifier of the purchased shipping label. 
+*
+    * @return string|null
+    */
+    public function getShippingLabelId(): ?string 
     {
         return $this->get('shippingLabelId');
     }
@@ -74,15 +92,16 @@ class ShipmentRequest extends Resource
      * @param string|null $shippingLabelId
      * @return $this
      */
-    public function setShippingLabelId(string $shippingLabelId = null): static
+    public function setShippingLabelId(string $shippingLabelId = null): static 
     {
         return $this->set('shippingLabelId', $shippingLabelId);
     }
 
     /**
-     * @return TransportInstruction|null
-     */
-    public function getTransport(): ?TransportInstruction
+    
+    * @return TransportInstruction|null
+    */
+    public function getTransport(): ?TransportInstruction 
     {
         return $this->relation('transport', TransportInstruction::class);
     }
@@ -91,7 +110,7 @@ class ShipmentRequest extends Resource
      * @param TransportInstruction|null $transport
      * @return $this
      */
-    public function setTransport(TransportInstruction $transport = null): static
+    public function setTransport(TransportInstruction $transport = null): static 
     {
         return $this->set('transport', $transport);
     }

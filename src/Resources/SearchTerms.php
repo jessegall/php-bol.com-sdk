@@ -2,28 +2,35 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class SearchTerms 
+*/
 class SearchTerms extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = '/retailer/insights/search-terms';
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'SearchTerms';
 
-
+    
     /**
-     * @return SearchTerm|null
-     */
-    public function getSearchTerms(): ?SearchTerm
+    
+    * @return SearchTerm|null
+    */
+    public function getSearchTerms(): ?SearchTerm 
     {
         return $this->relation('searchTerms', SearchTerm::class);
     }
@@ -32,7 +39,7 @@ class SearchTerms extends Resource
      * @param SearchTerm|null $searchTerms
      * @return $this
      */
-    public function setSearchTerms(SearchTerm $searchTerms = null): static
+    public function setSearchTerms(SearchTerm $searchTerms = null): static 
     {
         return $this->set('searchTerms', $searchTerms);
     }

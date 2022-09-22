@@ -2,30 +2,36 @@
 
 namespace JesseGall\BolComSDK\Resources;
 
+use JesseGall\BolComSDK\Resources\Resource;
+use JesseGall\Resources\ResourceCollection;
+
+/**
+* Class ShipmentItem 
+*/
 class ShipmentItem extends Resource
 {
 
     /**
      * The api endpoint of the resource.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = 'endpoint';
+    protected string|null $endpoint = null;
 
     /**
-     * The lightspeed resource this class represents
+     * The bol.com resource this class represents
      *
      * @var string
      */
     protected string $bolComResource = 'ShipmentItem';
 
-
+    
     /**
-     * A unique identifier for the item of the order that was shipped in this shipment.
-     *
-     * @return string|null
-     */
-    public function getOrderItemId(): ?string
+    * A unique identifier for the item of the order that was shipped in this shipment. 
+*
+    * @return string|null
+    */
+    public function getOrderItemId(): ?string 
     {
         return $this->get('orderItemId');
     }
@@ -34,15 +40,16 @@ class ShipmentItem extends Resource
      * @param string|null $orderItemId
      * @return $this
      */
-    public function setOrderItemId(string $orderItemId = null): static
+    public function setOrderItemId(string $orderItemId = null): static 
     {
         return $this->set('orderItemId', $orderItemId);
     }
 
     /**
-     * @return ShipmentFulfilment|null
-     */
-    public function getFulfilment(): ?ShipmentFulfilment
+    
+    * @return ShipmentFulfilment|null
+    */
+    public function getFulfilment(): ?ShipmentFulfilment 
     {
         return $this->relation('fulfilment', ShipmentFulfilment::class);
     }
@@ -51,15 +58,16 @@ class ShipmentItem extends Resource
      * @param ShipmentFulfilment|null $fulfilment
      * @return $this
      */
-    public function setFulfilment(ShipmentFulfilment $fulfilment = null): static
+    public function setFulfilment(ShipmentFulfilment $fulfilment = null): static 
     {
         return $this->set('fulfilment', $fulfilment);
     }
 
     /**
-     * @return OrderOffer|null
-     */
-    public function getOffer(): ?OrderOffer
+    
+    * @return OrderOffer|null
+    */
+    public function getOffer(): ?OrderOffer 
     {
         return $this->relation('offer', OrderOffer::class);
     }
@@ -68,15 +76,16 @@ class ShipmentItem extends Resource
      * @param OrderOffer|null $offer
      * @return $this
      */
-    public function setOffer(OrderOffer $offer = null): static
+    public function setOffer(OrderOffer $offer = null): static 
     {
         return $this->set('offer', $offer);
     }
 
     /**
-     * @return OrderProduct|null
-     */
-    public function getProduct(): ?OrderProduct
+    
+    * @return OrderProduct|null
+    */
+    public function getProduct(): ?OrderProduct 
     {
         return $this->relation('product', OrderProduct::class);
     }
@@ -85,17 +94,17 @@ class ShipmentItem extends Resource
      * @param OrderProduct|null $product
      * @return $this
      */
-    public function setProduct(OrderProduct $product = null): static
+    public function setProduct(OrderProduct $product = null): static 
     {
         return $this->set('product', $product);
     }
 
     /**
-     * Amount of the product being ordered.
-     *
-     * @return int|null
-     */
-    public function getQuantity(): ?int
+    * Amount of the product being ordered. 
+*
+    * @return int|null
+    */
+    public function getQuantity(): ?int 
     {
         return $this->get('quantity');
     }
@@ -104,17 +113,17 @@ class ShipmentItem extends Resource
      * @param int|null $quantity
      * @return $this
      */
-    public function setQuantity(int $quantity = null): static
+    public function setQuantity(int $quantity = null): static 
     {
         return $this->set('quantity', $quantity);
     }
 
     /**
-     * The selling price to the customer of a single unit including VAT.
-     *
-     * @return float|null
-     */
-    public function getUnitPrice(): ?float
+    * The selling price to the customer of a single unit including VAT. 
+*
+    * @return float|null
+    */
+    public function getUnitPrice(): ?float 
     {
         return $this->get('unitPrice');
     }
@@ -123,17 +132,17 @@ class ShipmentItem extends Resource
      * @param float|null $unitPrice
      * @return $this
      */
-    public function setUnitPrice(float $unitPrice = null): static
+    public function setUnitPrice(float $unitPrice = null): static 
     {
         return $this->set('unitPrice', $unitPrice);
     }
 
     /**
-     * The commission.
-     *
-     * @return int|null
-     */
-    public function getCommission(): ?int
+    * The commission. 
+*
+    * @return int|null
+    */
+    public function getCommission(): ?int 
     {
         return $this->get('commission');
     }
@@ -142,7 +151,7 @@ class ShipmentItem extends Resource
      * @param int|null $commission
      * @return $this
      */
-    public function setCommission(int $commission = null): static
+    public function setCommission(int $commission = null): static 
     {
         return $this->set('commission', $commission);
     }
