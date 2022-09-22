@@ -19,18 +19,11 @@ class PickupTimeSlotsRequest extends Resource implements Request
     protected string $endpoint = '/retailer/replenishments/pickup-time-slots';
 
     /**
-     * The available endpoint methods.
+     * The endpoint method.
      *
-     * @var array
+     * @var string
      */
-    protected array $endpointMethods = ['post'];
-
-   /**
-     * The api response of the request.
-     *
-     * @var string|null
-     */
-    protected string|null $response = PickupTimeSlotsResponse::class;
+    protected string $endpointMethod = 'post';
 
     /**
      * The bol.com resource this class represents

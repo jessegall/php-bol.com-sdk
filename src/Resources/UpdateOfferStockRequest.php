@@ -19,18 +19,11 @@ class UpdateOfferStockRequest extends Resource implements Request
     protected string $endpoint = '/retailer/offers/{offer-id}/stock';
 
     /**
-     * The available endpoint methods.
+     * The endpoint method.
      *
-     * @var array
+     * @var string
      */
-    protected array $endpointMethods = ['put'];
-
-   /**
-     * The api response of the request.
-     *
-     * @var string|null
-     */
-    protected string|null $response = null;
+    protected string $endpointMethod = 'put';
 
     /**
      * The bol.com resource this class represents

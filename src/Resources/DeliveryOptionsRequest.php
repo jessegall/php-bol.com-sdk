@@ -20,18 +20,11 @@ class DeliveryOptionsRequest extends Resource implements Request
     protected string $endpoint = '/retailer/shipping-labels/delivery-options';
 
     /**
-     * The available endpoint methods.
+     * The endpoint method.
      *
-     * @var array
+     * @var string
      */
-    protected array $endpointMethods = ['post'];
-
-   /**
-     * The api response of the request.
-     *
-     * @var string|null
-     */
-    protected string|null $response = DeliveryOptionsResponse::class;
+    protected string $endpointMethod = 'post';
 
     /**
      * The bol.com resource this class represents

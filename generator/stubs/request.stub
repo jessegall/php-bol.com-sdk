@@ -19,18 +19,11 @@ class {{ class }} extends Resource implements Request
     protected string $endpoint = {{ endpoint }};
 
     /**
-     * The available endpoint methods.
+     * The endpoint method.
      *
-     * @var array
+     * @var string
      */
-    protected array $endpointMethods = ['{{ endpointMethods }}'];
-
-   /**
-     * The api response of the request.
-     *
-     * @var string|null
-     */
-    protected string|null $response = {{ response }};
+    protected string $endpointMethod = '{{ endpointMethod }}';
 
     /**
      * The bol.com resource this class represents

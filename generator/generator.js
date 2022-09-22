@@ -57,15 +57,11 @@ function createPhpClass(name, config) {
 
     const endpoint = findEndpoint(name, config);
 
-    if (! endpoint) {
-        console.log(name);
-    }
-
     return stub
         .replaceAll('{{ class }}', name.ucfirst())
         .replaceAll('{{ description }}', config.description ? `\n* ${ config.description }` : '')
         .replaceAll('{{ endpoint }}', endpoint ? `'${ findEndpoint(name, config) }'` : null)
-        .replaceAll('{{ endpointMethods }}', Object.keys(paths[endpoint] || {}).join("' , '"))
+        .replaceAll('{{ endpointMethod }}', findEndpointMethod(name, endpoint))
         .replaceAll('{{ bolComResource }}', name)
         .replaceAll('{{ response }}', findResponse(name, config))
         .replaceAll('{{ methods }}', methods.join("\n"));
@@ -163,10 +159,9 @@ function findEndpoint(name, config) {
     if (config._type === 'request') {
         return Object.keys(paths).find(key => {
             const path = paths[key];
-
             return ['put', 'post'].find(
                 method => path[method]?.parameters.find(i => i.name === 'body')?.schema.$ref.split('/').reverse()[0] === name
-            )
+            );
         });
     }
 
@@ -193,6 +188,24 @@ function findEndpoint(name, config) {
     }
 
     return null;
+}
+
+function findEndpointMethod(name, endpoint) {
+    const path = paths[endpoint];
+
+    if (! path) {
+        return null;
+    }
+
+    return Object.keys(path).find(key => {
+        const method = path[key];
+
+        if (! method.parameters) {
+            return false;
+        }
+
+        return method.parameters.find(i => i.schema?.$ref.split('/').reverse()[0] === name);
+    })
 }
 
 function findResponse(name, config) {
