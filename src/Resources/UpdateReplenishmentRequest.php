@@ -13,9 +13,9 @@ class UpdateReplenishmentRequest extends Resource implements Request
     /**
      * The api endpoint of the request.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = '/retailer/replenishments/{replenishment-id}';
+    protected string|null $endpoint = '/retailer/replenishments';
 
     /**
      * The endpoint method.

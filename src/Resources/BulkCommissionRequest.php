@@ -13,9 +13,9 @@ class BulkCommissionRequest extends Resource implements Request
     /**
      * The api endpoint of the request.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = '/retailer/commission';
+    protected string|null $endpoint = '/retailer/commission';
 
     /**
      * The endpoint method.

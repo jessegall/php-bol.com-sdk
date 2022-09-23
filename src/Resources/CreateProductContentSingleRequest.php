@@ -13,9 +13,9 @@ class CreateProductContentSingleRequest extends Resource implements Request
     /**
      * The api endpoint of the request.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = '/retailer/content/products';
+    protected string|null $endpoint = '/retailer/content/products';
 
     /**
      * The endpoint method.

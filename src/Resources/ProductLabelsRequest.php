@@ -13,9 +13,9 @@ class ProductLabelsRequest extends Resource implements Request
     /**
      * The api endpoint of the request.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = '/retailer/replenishments/product-labels';
+    protected string|null $endpoint = '/retailer/replenishments/product-labels';
 
     /**
      * The endpoint method.

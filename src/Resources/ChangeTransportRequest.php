@@ -12,9 +12,9 @@ class ChangeTransportRequest extends Resource implements Request
     /**
      * The api endpoint of the request.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = '/retailer/transports/{transport-id}';
+    protected string|null $endpoint = '/retailer/transports';
 
     /**
      * The endpoint method.

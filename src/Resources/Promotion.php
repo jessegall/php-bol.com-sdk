@@ -16,7 +16,14 @@ class Promotion extends Resource
      *
      * @var string|null
      */
-    protected string|null $endpoint = '/retailer/promotions/{promotion-id}';
+    protected string|null $endpoint = '/retailer/promotions';
+
+    /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string|null $identifier = 'promotionId';
 
     /**
      * The bol.com resource this class represents

@@ -57,10 +57,21 @@ function createPhpClass(name, config) {
 
     const endpoint = findEndpoint(name, config);
 
+    let _endpoint = endpoint?.split('/');
+    if (_endpoint) {
+        if (_endpoint[_endpoint.length - 1].endsWith('}')) {
+            _endpoint.pop();
+        }
+        _endpoint = _endpoint.join('/');
+    }
+
+    const identifier = findIdentifier(name, endpoint);
+
     return stub
         .replaceAll('{{ class }}', name.ucfirst())
+        .replaceAll('{{ identifier }}', identifier ? `'${ identifier }'` : null)
         .replaceAll('{{ description }}', config.description ? `\n* ${ config.description }` : '')
-        .replaceAll('{{ endpoint }}', endpoint ? `'${ findEndpoint(name, config) }'` : null)
+        .replaceAll('{{ endpoint }}', endpoint ? `'${ _endpoint }'` : null)
         .replaceAll('{{ endpointMethod }}', findEndpointMethod(name, endpoint))
         .replaceAll('{{ bolComResource }}', name)
         .replaceAll('{{ response }}', findResponse(name, config))
@@ -216,4 +227,24 @@ function findResponse(name, config) {
     const response = name.replace('Request', 'Response');
 
     return names.find(i => i === response) ? `${ response }::class` : null;
+}
+
+function findIdentifier(name, endpoint) {
+    if (! endpoint) {
+        return null;
+    }
+
+    const suffix = endpoint.split('/').pop();
+
+    if (suffix.startsWith('{') && suffix.endsWith('}')) {
+        const [name, id] = suffix.replace('{', '').replace('}', '').split('-');
+
+        if (id) {
+            return `${ name }Id`;
+        }
+
+        return name;
+    }
+
+    return null;
 }

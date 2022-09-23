@@ -12,9 +12,9 @@ class PickupTimeSlotsRequest extends Resource implements Request
     /**
      * The api endpoint of the request.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = '/retailer/replenishments/pickup-time-slots';
+    protected string|null $endpoint = '/retailer/replenishments/pickup-time-slots';
 
     /**
      * The endpoint method.

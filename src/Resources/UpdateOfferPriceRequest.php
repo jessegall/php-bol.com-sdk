@@ -12,9 +12,9 @@ class UpdateOfferPriceRequest extends Resource implements Request
     /**
      * The api endpoint of the request.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = '/retailer/offers/{offer-id}/price';
+    protected string|null $endpoint = '/retailer/offers/{offer-id}/price';
 
     /**
      * The endpoint method.

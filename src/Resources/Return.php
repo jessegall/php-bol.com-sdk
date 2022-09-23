@@ -16,7 +16,14 @@ class return extends Resource
      * @var string|null
      */
     protected
-    string | null $endpoint = '/retailer/returns/{return-id}';
+    string | null $endpoint = '/retailer/returns';
+
+    /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string | null $identifier = 'returnId';
 
     /**
      * The bol.com resource this class represents

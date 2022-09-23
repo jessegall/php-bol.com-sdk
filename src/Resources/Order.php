@@ -16,7 +16,14 @@ class Order extends Resource
      *
      * @var string|null
      */
-    protected string|null $endpoint = '/retailer/orders/{order-id}';
+    protected string|null $endpoint = '/retailer/orders';
+
+    /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string|null $identifier = 'orderId';
 
     /**
      * The bol.com resource this class represents

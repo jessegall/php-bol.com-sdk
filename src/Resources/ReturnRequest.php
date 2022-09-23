@@ -12,9 +12,9 @@ class ReturnRequest extends Resource implements Request
     /**
      * The api endpoint of the request.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = '/retailer/returns/{rma-id}';
+    protected string|null $endpoint = '/retailer/returns';
 
     /**
      * The endpoint method.

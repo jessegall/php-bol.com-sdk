@@ -15,7 +15,14 @@ class RetailerOffer extends Resource
      *
      * @var string|null
      */
-    protected string|null $endpoint = '/retailer/offers/{offer-id}';
+    protected string|null $endpoint = '/retailer/offers';
+
+    /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string|null $identifier = 'offerId';
 
     /**
      * The bol.com resource this class represents

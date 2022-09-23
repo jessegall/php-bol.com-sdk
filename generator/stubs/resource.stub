@@ -19,6 +19,13 @@ class {{ class }} extends Resource
     protected string|null $endpoint = {{ endpoint }};
 
     /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string|null $identifier = {{ identifier }};
+
+    /**
      * The bol.com resource this class represents
      *
      * @var string

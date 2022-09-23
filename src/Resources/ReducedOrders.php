@@ -19,6 +19,13 @@ class ReducedOrders extends Resource
     protected string|null $endpoint = '/retailer/orders';
 
     /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string|null $identifier = null;
+
+    /**
      * The bol.com resource this class represents
      *
      * @var string

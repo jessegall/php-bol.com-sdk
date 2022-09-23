@@ -15,7 +15,14 @@ class ProcessStatus extends Resource
      *
      * @var string|null
      */
-    protected string|null $endpoint = '/retailer/content/products';
+    protected string|null $endpoint = '/shared/process-status';
+
+    /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string|null $identifier = 'processStatusId';
 
     /**
      * The bol.com resource this class represents

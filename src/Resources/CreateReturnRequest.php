@@ -12,9 +12,9 @@ class CreateReturnRequest extends Resource implements Request
     /**
      * The api endpoint of the request.
      *
-     * @var string
+     * @var string|null
      */
-    protected string $endpoint = '/retailer/returns';
+    protected string|null $endpoint = '/retailer/returns';
 
     /**
      * The endpoint method.

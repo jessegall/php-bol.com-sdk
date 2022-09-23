@@ -16,6 +16,13 @@ class ReplenishmentPickupTimeSlot extends Resource
     protected string|null $endpoint = null;
 
     /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string|null $identifier = null;
+
+    /**
      * The bol.com resource this class represents
      *
      * @var string

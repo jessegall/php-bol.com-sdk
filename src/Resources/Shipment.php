@@ -15,7 +15,14 @@ class Shipment extends Resource
      *
      * @var string|null
      */
-    protected string|null $endpoint = '/retailer/shipments/{shipment-id}';
+    protected string|null $endpoint = '/retailer/shipments';
+
+    /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string|null $identifier = 'shipmentId';
 
     /**
      * The bol.com resource this class represents

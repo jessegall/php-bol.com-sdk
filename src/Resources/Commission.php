@@ -15,7 +15,14 @@ class Commission extends Resource
      *
      * @var string|null
      */
-    protected string|null $endpoint = '/retailer/commission/{ean}';
+    protected string|null $endpoint = '/retailer/commission';
+
+    /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string|null $identifier = 'ean';
 
     /**
      * The bol.com resource this class represents

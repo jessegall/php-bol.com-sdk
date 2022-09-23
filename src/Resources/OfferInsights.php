@@ -19,6 +19,13 @@ class OfferInsights extends Resource
     protected string|null $endpoint = '/retailer/insights/offer';
 
     /**
+     * The unique identifier for the resource.
+     *
+     * @var string|null
+     */
+    protected string|null $identifier = null;
+
+    /**
      * The bol.com resource this class represents
      *
      * @var string
